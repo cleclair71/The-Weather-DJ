@@ -44,9 +44,32 @@
     </div>
     <!-- Displayed playlists -->
     <div class="displayed-playlists">
+
+        <div class="playlistPageContainer">
+            <div class="titleHolder">
+            <h2 id="title"></h2>
+            <h4 id="weather-desc"></h4>
+            </div>
+
         <h3>Playlists:</h3>
+        </div>
+
         <ul id="playlists">
+
             <!-- Playlists will be generated here -->
+                <div class="playlist">
+                        <div class="playlistPlaceholder">
+
+                        </div>
+                        <div class="playlistContainer">
+                            <div class="playlistDetails">
+                            <p class="playlistName"></p>
+                            <p class="playlistType"></p>
+                            </div>
+                            <button class="play-button"></button>
+                        </div>
+                        <!-- <div class="saveButton"></div>  -->
+                    </div>
         </ul>
     </div>
     <!-- Preview Modal -->
@@ -60,6 +83,8 @@
             </ul>
         </div>
     </div>
+    
+
     <!-- Change City -->
     <button id="change-city">Change City</button>
 </body>
