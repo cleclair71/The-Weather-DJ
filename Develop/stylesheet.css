@@ -13,11 +13,11 @@ body {
     }
   
 H1 {
-    text-transform: uppercase;
-    font-family: 'Noto Sans Symbols 2', sans-serif;
-    line-height: 0.8;
+    /* text-transform: uppercase;
+    font-family: 'Noto Sans Symbols 2', sans-serif; */
+    /* line-height: 0.8;
     font-size: 100px;
-    display: block;
+    display: block; */
     margin-top: 115px;
     animation: slide-in 1000ms;
 }
