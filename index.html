@@ -11,15 +11,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
   <link rel="stylesheet" href="./Develop/stylesheet.css">
+  <link rel="stylesheet" href="../The-Weather-DJ/public/styles.css">
   <title>The Weather DJ</title>
 </head>
 
 <body>
-  <header>
-    <video id="background-video" autoplay loop muted poster="./Assets/images/Line - 144259.mp4">
-      <source src="./Assets/images/Line - 144259.mp4" type="video/mp4">
+  <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
+    <video autoplay
+    loop
+    muted
+    class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
+      <source src="../The-Weather-DJ/Assets/images/Line - 144259.mp4" type="video/mp4">
     </video>
-    <h1>The <br> Weather DJ</h1>
+    <h1 class="relative z-30 text-white text-8xl leading-3 font-weatherdj uppercase">The <br> Weather DJ</h1> <!-- tailwind header-->
   </header>
 
   <!-- Modal -->
