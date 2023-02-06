@@ -5,13 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@t7/weather-api"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@t7/spotify-api"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="./Develop/stylesheet.css">
   <link rel="stylesheet" href="../The-Weather-DJ/public/styles.css">
   <title>The Weather DJ</title>
 </head>
@@ -38,7 +37,6 @@
         <div id="location-search">
           <h2 class="text-xl font-medium leading-normal text-gray-800">What city are you in?</h2>
           <input type="text" id="city-input" placeholder="Enter your city">
-          <button id="submit-city">Submit</button>
         </div>
 
         <!-- Genre Selection -->
@@ -56,8 +54,8 @@
             <option value="blues">Blues</option>
             <option value="soul">Soul</option>
           </select>
-          <button id="submit-genre">Submit</button>
         </div>
+        <button id="submit-selection">Submit</button>
       </div>
     </div>
   </div>
