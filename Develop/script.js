@@ -39,9 +39,23 @@ searchBtn.addEventListener("click", function () {
     displayWeather(searchValue);
     savedCities.push(searchValue);
     localStorage.setItem("city", JSON.stringify(savedCities));
+    renderSearch()
     getPlaylist();
 });
 localStorage.clear()
+
+//saving searched cities
+function renderSearch(){
+  var ul = document.querySelector(".city-list")
+  for (var i =0; i< savedCities.length; i++) {
+    var storedCities = savedCities[i]
+    var storedList = document.createElement('li')
+    storedList.classList.add("stored-list")
+    storedList.textContent = storedCities
+  }
+//append list to ul element
+  ul.appendChild(storedList)
+}
 
 
 
