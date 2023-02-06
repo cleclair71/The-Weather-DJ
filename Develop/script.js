@@ -30,11 +30,34 @@ function displayWeather(city) {
             currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
         })
 }
+
+let savedCities = JSON.parse(localStorage.getItem("city")) || []
+
+//event listener
 searchBtn.addEventListener("click", function () {
     var searchValue = input.value 
     displayWeather(searchValue);
+    savedCities.push(searchValue);
+    localStorage.setItem("city", JSON.stringify(savedCities));
+    renderSearch()
     getPlaylist();
 });
+localStorage.clear()
+
+//saving searched cities
+function renderSearch(){
+  var ul = document.querySelector(".city-list")
+  for (var i =0; i< savedCities.length; i++) {
+    var storedCities = savedCities[i]
+    var storedList = document.createElement('li')
+    storedList.classList.add("stored-list")
+    storedList.textContent = storedCities
+  }
+//append list to ul element
+  ul.appendChild(storedList)
+}
+
+
 
 
     
