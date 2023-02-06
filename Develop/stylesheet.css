@@ -12,6 +12,18 @@ body {
     }
     }
   
+    @keyframes slide-up {
+      0% {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      100% {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+
 H1 {
     text-transform: uppercase;
     font-family: 'Noto Sans Symbols 2', sans-serif; 
@@ -33,4 +45,80 @@ H1 {
   top: 0;
   bottom: 0;
   z-index: -1;
+}
+
+/* weather */
+.weather-forecast {
+  display: block;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  background-color: rgba(0, 0, 0, 0.445);
+    border-radius: 0.5px;
+    max-width: 300px;
+}
+
+#city-name {
+  text-transform: uppercase;
+    font-family: 'Noto Sans Symbols 2', sans-serif; 
+    font-size: 50px;
+    color: #fff;  
+}
+.displayed-playlists {
+box-sizing: border-box;
+}
+
+/* playlist flex container*/
+.cards {
+  padding: 20px;
+}
+
+.cards:after {
+display: flex;
+flex-wrap: wrap;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+/* unamed div in js */
+.playlist-card {
+  height: 200px;
+  width: 23%;
+  float: left;
+  margin: 1%;
+  padding: 20px;
+  color: white;
+  animation: slide-up 0.4s ease;
+}
+@media(max-width:767px) {
+  .playlist-card {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+  }
+}
+
+.playlist-title {
+  margin: 0;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.preview-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 0.5px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+/* playlist thumnail */
+.thumbnail {
+  
 }
