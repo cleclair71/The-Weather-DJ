@@ -12,31 +12,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="../The-Weather-DJ/public/styles.css">
+  <link rel="stylesheet" href="../The-Weather-DJ/Develop/stylesheet.css">
   <title>The Weather DJ</title>
 </head>
 
 <body>
-  <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
-    <video autoplay
-    loop
-    muted
-    class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
-      <source src="../The-Weather-DJ/Assets/images/Line - 144259.mp4" type="video/mp4">
+  <header>
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+      <source src="Assets\images\Line - 144259.mp4" type="video/mp4">
     </video>
-    <h1 class="relative z-30 text-white text-8xl leading-3 font-weatherdj uppercase">The <br> Weather DJ</h1> <!-- tailwind header-->
+    <h1>The <br> Weather DJ</h1> <!-- tailwind header-->
   </header>
 
   <!-- Modal -->
   <div id="myModal"
-    class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto">
+    class="modal">
     <div id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
       <!-- Modal content -->
       <div
-        class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+        class="modal-content">
         <span class="close">&times;</span>
         <div id="location-search">
-          <h2 class="text-xl font-medium leading-normal text-gray-800">What city are you in?</h2>
+          <h2>What city are you in?</h2>
           <input type="text" id="city-input" placeholder="Enter your city">
           <button id="submit-city">Submit</button>
         </div>
