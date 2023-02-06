@@ -31,8 +31,8 @@
 
 <body>
   <header>
-    <video id="background-video" autoplay loop muted poster="../The-Weather-DJ/Assets/images/Line - 144259.mp4">
-      <source src="../The-Weather-DJ/Assets/images/Line - 144259.mp4" type="video/mp4">
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+      <source src="Assets\images\Line - 144259.mp4" type="video/mp4">
     </video>
     <h1>The <br> Weather DJ</h1>
   </header>
@@ -47,35 +47,53 @@
                 <input type="text" id="city-input" placeholder="Enter your city">
                 <button id="submit-city">Submit</button>
             </div>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div id="ModalFullscreen">
+      <!-- Modal content -->
+      <div class="modal-content1">
+        <span class="close">&times;</span>
+        <div id="location-search">
+          <h2>What city are you in?</h2>
+          <input type="text" id="city-input" placeholder="Enter your city">
+          <div class="search-list">
+            <ul class="city-list">
+          </div>
 
-            <!-- Genre Selection -->
-            <div id="genre-select">
-                <h2>select a genre</h2>
-                <select id="genre-dropdown">
-                    <option value="pop">Pop</option>
-                    <option value="rock">Rock</option>
-                    <option value="hip-hop">Hip-Hop</option>
-                    <option value="electronic">Electronic</option>
-                    <option value="country">Country</option>
-                    <option value="jazz">Jazz</option>
-                    <option value="classical">Classical</option>
-                    <option value="r&b">R&B</option>
-                    <option value="blues">Blues</option>
-                    <option value="soul">Soul</option>
-                </select>
-                <button id="submit-genre">Submit</button>
+          <!-- Genre Selection -->
+          <div id="genre-select">
+            <h2>select a genre</h2>
+            <select id="genre-dropdown">
+              <option value="pop">Pop</option>
+              <option value="rock">Rock</option>
+              <option value="hip-hop">Hip-Hop</option>
+              <option value="electronic">Electronic</option>
+              <option value="country">Country</option>
+              <option value="jazz">Jazz</option>
+              <option value="classical">Classical</option>
+              <option value="r&b">R&B</option>
+              <option value="blues">Blues</option>
+              <option value="soul">Soul</option>
+            </select>
+            <div class="select-icon">
+              <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+              </svg>
             </div>
+          </div>
+          <button id="submit-selection">Submit</button>
         </div>
+      </div>
     </div>
 
     <h1>The Weather DJ</h1>
 
-    <!-- Weather forecast -->
-    <div class="weather-forecast">
-        <h2 id="city-name"></h2>
-        <p id="weather-description"></p>
-        <p id="temperature"></p>
-    </div>
+      <!-- Weather forecast -->
+      <div class="weather-forecast">
+          <h2 id="city-name"></h2>
+          <p id="weather-description"></p>
+          <p id="temperature"></p>
+      </div>
 
     <!-- Displayed playlists -->
     <div class="displayed-playlists">
