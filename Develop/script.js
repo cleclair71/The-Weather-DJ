@@ -47,6 +47,8 @@ searchBtn.addEventListener("click", function () {
 localStorage.clear()
 
 
+
+
     
 
 //jackson's code 
