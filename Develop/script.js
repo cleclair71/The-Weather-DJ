@@ -1,6 +1,6 @@
 //variables
 var apikey = "2699b95b9f3bb5523129bfe9fb508790";
-var searchBtn = document.querySelector("#submit-city");
+var searchBtn = document.querySelector("#submit-selection");
 var playlist = document.querySelector(".displayed-playlists");
 playlist.style.display = "none";
 var input = document.querySelector("#city-input");
@@ -22,15 +22,11 @@ function displayWeather(city) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             //name of the city
-            console.log("city", data.name);
             currentCity.innerHTML = data.name;
             //weather description
-            console.log("description", (data.weather[0].main));
             weather.innerHTML = "Description: " + (data.weather[0].main);
             //temperature
-            console.log("temperature",(data.main.temp))
             currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
         })
 }
@@ -43,6 +39,7 @@ searchBtn.addEventListener("click", function () {
     displayWeather(searchValue);
     savedCities.push(searchValue);
     localStorage.setItem("city", JSON.stringify(savedCities));
+    getPlaylist();
 });
 localStorage.clear()
 
@@ -52,4 +49,45 @@ localStorage.clear()
     
 
 //jackson's code 
+var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ"
+
+function getPlaylist() {
+  //Splice to remove "Description: " from the text content and return the weather condition 
+  var currentWeather = weather.textContent.slice(13);
+  
+  var genre = document.querySelector("#genre-dropdown").value;
+  switch (currentWeather) {
+    case "Rain":
+    case "Drizzle":
+      mood = ["Sad", "Lonely", "Rainy Day", "Cry", "Chill"];
+      break;
+    case "Clear":
+      mood = ["Happy", "Sunny", "Cheerful", "Smile", "Sunshine"];
+      break;
+    case "Thunderstorm":
+      mood = ["Depressed", "Sadness", "Stormy", "Downhearted", "Despair"];
+      break;
+    case "Snow":
+      mood = ["Snowy", "Cold", "Winter", "Mellow", "Chilly"];
+      break;
+    case "Cloudy":
+      mood = ["Cloudy", "Uncertain", "Hazy", "Overcast", "Moody"];
+  }
+
+  /* 
+  Call to Youtube's API to get 5 playlist results using 'mood' based on the weather and 'genre' 
+  from the user's selection to form a search along the lines of 'playlist music sad country' 
+  to find a playlist for 5 different key words of 'mood' to produce 1 playlist for each
+  */
+  for (var i=0; i<5; i++) {
+    fetch ('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=playlist&q=music ' + mood[i] + ' ' + genre + '&key=' + key)
+      .then (function (response) {
+        return response.json();
+      })
+      .then (function (data) {
+        var id = data.items[0].id.playlistId;
+    });
+  }
+}
+
 //rajvir's code
