@@ -34,10 +34,17 @@ function displayWeather(city) {
             currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
         })
 }
+
+let savedCities = JSON.parse(localStorage.getItem("city")) || []
+
+//event listener
 searchBtn.addEventListener("click", function () {
     var searchValue = input.value 
     displayWeather(searchValue);
+    savedCities.push(searchValue);
+    localStorage.setItem("city", JSON.stringify(savedCities));
 });
+localStorage.clear()
 
 
     
