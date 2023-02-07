@@ -60,14 +60,14 @@ H1 {
     font-family: 'Noto Sans Symbols 2', sans-serif; 
     line-height: 0.8;
     font-size: 100px;
-    display: block; 
+    display: flex; 
     margin-top: 115px;
     animation: slide-in 1000ms;
 }
 
 #background-video {
     width: 100vw;
-  height: 30%;
+  height: 25%;
   background-size: cover;
   object-fit: cover;
   position: fixed;
@@ -296,6 +296,7 @@ select {
   -moz-appearance: none;
   transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
   transform: translateY(-32px);
+  border-radius: 0.5px;
 }
 
 select::-ms-expand {
@@ -334,6 +335,7 @@ select:focus {
   border: 2px solid rgba(37, 37, 37, 0.582);
   padding-left: 5px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  transform: translateY(-15px);
 }
 .select-icon svg.icon {
   transition: fill 0.3s ease;
