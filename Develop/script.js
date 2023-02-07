@@ -9,8 +9,10 @@ var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
 //fardina's code
 function displayWeather(city) {
+  input.value = ""
+  //card to display playlist when city is selected
     playlist.style.display = "block";
-    //card to display playlist when city is selected
+    // fetches current weather
     fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" + 
         city + 
@@ -52,6 +54,10 @@ function renderSearch(){
     var storedList = document.createElement('li')
     storedList.classList.add("stored-list")
     storedList.textContent = storedCities
+    // to display weather for stored list cities
+    storedList.addEventListener("click", function(){
+      displayWeather(storedList.textContent)
+    })
   }
 //append list to ul element
   ul.appendChild(storedList)
