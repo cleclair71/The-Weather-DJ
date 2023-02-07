@@ -6,25 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    //<script src="https://cdn.jsdelivr.net/npm/@t7/weather-api"></script>
-    //<script src="https://cdn.jsdelivr.net/npm/@t7/spotify-api"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-        },
-      }
-    }
-  }
-</script>
     <link rel="stylesheet" href="../The-Weather-DJ/Develop/stylesheet.css">
     <title>The Weather DJ</title>
 </head>
@@ -67,7 +54,9 @@
             </select>
             <div class="select-icon">
               <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
-                <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                <path
+                  d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
+                </path>
               </svg>
             </div>
           </div>
@@ -79,44 +68,23 @@
     <h1>The Weather DJ</h1>
 
     <!-- Weather forecast -->
-    <div class="weather-forecast">
-      <h2 id="city-name"></h2>
-      <p id="weather-description"></p>
-      <p id="temperature"></p>
-    </div>
-
-    <!-- Displayed playlists -->
-    <div class="displayed-playlists">
-        <h3>Playlists:</h3>
-        <ul  class="playlist-card">
-            <!-- Playlists will be generated here -->
-           
-            <div class="cards">
-              <img src="https://via.placeholder.com/150"/>
-              <div class="playlist-name"> Playlist Name</div>
-              <button class="save-btn">Save</button>   
+    <div class="wrapper">
+      <div class="row">
+        <div class="column">
+          <div class="weather-forecast">
+            <h2 id="city-name"></h2>
+            <p id="weather-description"></p>
+            <p id="temperature"></p>
           </div>
-          <div class="cards">
-            <img src="https://via.placeholder.com/150"/>
-            <div class="playlist-name"> Playlist Name</div>
-            <button class="save-btn">Save</button>   
         </div>
-        <div class="cards">
-          <img src="https://via.placeholder.com/150"/>
-          <div class="playlist-name"> Playlist Name</div>
-          <button class="save-btn">Save</button>   
+        <!-- Displayed playlists -->
+        <div class="column">
+          <div class="displayed-playlists">
+            <h3>Playlists:</h3>                                 
+          </div                                       
+        </div>
       </div>
-      <div class="cards">
-        <img src="https://via.placeholder.com/150"/>
-        <div class="playlist-name"> Playlist Name</div>
-        <button class="save-btn">Save</button>   
-    </div>
-    <div class="cards">
-      <img src="https://via.placeholder.com/150"/>
-      <div class="playlist-name"> Playlist Name</div>
-      <button class="save-btn">Save</button>   
-        </ul>
-    </div>
+                                                                  
     <!-- Preview Modal -->
     <div id="preview-modal" class="modal">
         <!-- Modal content -->
