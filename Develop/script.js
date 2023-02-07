@@ -60,26 +60,25 @@ async function displayWeather(city) {
     getPlaylists();
   });
   
-  localStorage.clear()
+  //localStorage.clear()
   
   //saving searched cities
   function renderSearch(){
-    let savedCities = JSON.parse(localStorage.getItem("city")) || []
+    let savedCities = JSON.parse(localStorage.getItem("city")) || [];
     //autocomplete function using previously searched cities
     $("#city-input").autocomplete({
       source: savedCities,
-     
     });
 
     //event listener to open modal once change city button is selected
-    changeCityBtn.addEventListener("click", function (){
+    changeCityBtn.addEventListener("click", function () {
       weatherModal.style.display = "block";
-    })
-    
+    });
+
     //previous appending list
     // var ul = document.querySelector(".city-list")
     // for (var i =0; i< savedCities.length; i++) {
-  //   var storedCities = savedCities[i]
+    //   var storedCities = savedCities[i]
     //var storedList = document.createElement('li')
     //storedList.classList.add("stored-list")
     //storedList.textContent = storedCities
@@ -87,11 +86,11 @@ async function displayWeather(city) {
     // storedList.addEventListener("click", function(){
     //   displayWeather(storedList.textContent)
     // })
-  //}
+    //}
 
-  //append list to ul element
-  //ul.appendChild(storedList)
-}
+    //append list to ul element
+    //ul.appendChild(storedList)
+  }
 
 
 
