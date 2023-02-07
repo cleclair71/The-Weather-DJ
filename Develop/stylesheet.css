@@ -60,14 +60,14 @@ H1 {
     font-family: 'Noto Sans Symbols 2', sans-serif; 
     line-height: 0.8;
     font-size: 100px;
-    display: block; 
+    display: flex; 
     margin-top: 115px;
     animation: slide-in 1000ms;
 }
 
 #background-video {
     width: 100vw;
-  height: 30%;
+  height: 25%;
   background-size: cover;
   object-fit: cover;
   position: fixed;
