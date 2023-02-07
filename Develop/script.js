@@ -7,7 +7,7 @@ var input = document.querySelector("#city-input");
 var currentTemp = document.querySelector("#temperature");
 var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
-var weatherModal = document.querySelector(".modal-content1")
+var weatherModal = document.querySelector("#myModal")
 weatherModal.style.display = "block"
 var changeCityBtn = document.querySelector("#change-city")
 //fardina's code
