@@ -31,8 +31,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/cleclair71/The-Weather-DJ/blob/develop/Assets/images/The%20weather%20dj.gif">
+    <img src="Assets\images\The weather dj.gif" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">The Weather DJ</h3>
