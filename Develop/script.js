@@ -7,11 +7,12 @@ var input = document.querySelector("#city-input");
 var currentTemp = document.querySelector("#temperature");
 var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
+var currentWeather; //Initialized in displayWeather for use in getPlaylists()
 //fardina's code
-function displayWeather(city) {
+async function displayWeather(city) {
     playlist.style.display = "block";
     //card to display playlist when city is selected
-    fetch(
+    await fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" + 
         city + 
         "&appid=" + 
@@ -25,60 +26,85 @@ function displayWeather(city) {
             //name of the city
             currentCity.innerHTML = data.name;
             //weather description
-            weather.innerHTML = "Description: " + (data.weather[0].main);
+            currentWeather = data.weather[0].main;
+            weather.innerHTML = "Description: " + currentWeather;
             //temperature
             currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
         })
 }
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", async function () {
     var searchValue = input.value 
-    displayWeather(searchValue);
-    getPlaylist();
+    await displayWeather(searchValue);
+    getPlaylists();
 });
 
 
     
 
 //jackson's code 
-var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ"
+//var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
+var key = "AIzaSyCTPCZ0BW1oVO9rOTLhWPKmaxI45OKeyvA" //Hamzah's Key
 
-function getPlaylist() {
-  //Splice to remove "Description: " from the text content and return the weather condition 
-  var currentWeather = weather.textContent.slice(13);
-  
+function getPlaylists() {
   var genre = document.querySelector("#genre-dropdown").value;
   switch (currentWeather) {
     case "Rain":
     case "Drizzle":
-      mood = ["Sad", "Lonely", "Rainy Day", "Cry", "Chill"];
+      mood = "Rainy";
       break;
     case "Clear":
-      mood = ["Happy", "Sunny", "Cheerful", "Smile", "Sunshine"];
+      mood = "Happy";
       break;
     case "Thunderstorm":
-      mood = ["Depressed", "Sadness", "Stormy", "Downhearted", "Despair"];
+      mood = "Angsty";
       break;
     case "Snow":
-      mood = ["Snowy", "Cold", "Winter", "Mellow", "Chilly"];
+      mood = "Cozy";
       break;
-    case "Cloudy":
-      mood = ["Cloudy", "Uncertain", "Hazy", "Overcast", "Moody"];
+    case "Clouds":
+      mood = "Chill";
   }
 
   /* 
   Call to Youtube's API to get 5 playlist results using 'mood' based on the weather and 'genre' 
   from the user's selection to form a search along the lines of 'playlist music sad country' 
-  to find a playlist for 5 different key words of 'mood' to produce 1 playlist for each
   */
-  for (var i=0; i<5; i++) {
-    fetch ('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=playlist&q=music ' + mood[i] + ' ' + genre + '&key=' + key)
+  var playlistData = [];   
+    fetch ('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&type=playlist&q=music ' + mood + ' ' + genre + '&key=' + key)
       .then (function (response) {
         return response.json();
       })
       .then (function (data) {
-        var id = data.items[0].id.playlistId;
+        for (var i=0; i<5; i++) {
+          playlistData.push(data.items[i]);
+        }
+        showPlaylists(playlistData);
     });
-  }
 }
 
+//Display each playlist title and image (clickable link to source on the image)
+function showPlaylists(playlistData) {
+  //Delete any children if they exist to clear previously displayed playlists
+  if (playlist.children.length > 1) {
+    console.log(playlist.children.length);
+    for (var i=0; i<5; i++) {
+      playlist.children[1].remove();
+    }
+  }
+  for (var i=0; i<5; i++) {
+    var playlistEl = document.createElement('div');
+    //Create a div to contain each playlist
+    playlistEl.innerHTML = 
+      '<div class="playlist-card">' +
+        '<h3>' + playlistData[i].snippet.title + '</h3>' +
+        '<button>Preview Playlist</button>' +
+      '</div>' +
+      '<a href=' + 'https://www.youtube.com/playlist?list=' + playlistData[i].id.playlistId + '>' +
+        '<img src=' + playlistData[i].snippet.thumbnails.high.url + '>' +
+      '</a>';
+    
+    playlist.appendChild(playlistEl);
+    
+  }
+}
 //rajvir's code
