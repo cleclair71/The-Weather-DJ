@@ -129,6 +129,8 @@ box-sizing: border-box;
 /* playlist flex container*/
 .cards {
   padding: 20px;
+  display: flex; //
+  
 }
 
 .cards:after {
@@ -148,6 +150,11 @@ padding: 0;
   padding: 20px;
   color: white;
   animation: slide-up 0.4s ease;
+}
+/*placehold playlist img */
+.cards img{
+  width: 50px;
+  height: auto;
 }
 @media(max-width:767px) {
   .playlist-card {

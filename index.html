@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@t7/weather-api"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@t7/spotify-api"></script>
+    //<script src="https://cdn.jsdelivr.net/npm/@t7/weather-api"></script>
+    //<script src="https://cdn.jsdelivr.net/npm/@t7/spotify-api"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-<script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
@@ -89,33 +88,33 @@
     <!-- Displayed playlists -->
     <div class="displayed-playlists">
         <h3>Playlists:</h3>
-        <ul id="playlists">
+        <ul  class="playlist-card">
             <!-- Playlists will be generated here -->
-            <div class="playlist-container">
+           
+            <div class="cards">
               <img src="https://via.placeholder.com/150"/>
               <div class="playlist-name"> Playlist Name</div>
               <button class="save-btn">Save</button>   
           </div>
-          <div class="playlist-container">
+          <div class="cards">
             <img src="https://via.placeholder.com/150"/>
             <div class="playlist-name"> Playlist Name</div>
             <button class="save-btn">Save</button>   
         </div>
-        <div class="playlist-container">
+        <div class="cards">
           <img src="https://via.placeholder.com/150"/>
           <div class="playlist-name"> Playlist Name</div>
           <button class="save-btn">Save</button>   
       </div>
-      <div class="playlist-container">
+      <div class="cards">
         <img src="https://via.placeholder.com/150"/>
         <div class="playlist-name"> Playlist Name</div>
         <button class="save-btn">Save</button>   
     </div>
-    <div class="playlist-container">
+    <div class="cards">
       <img src="https://via.placeholder.com/150"/>
       <div class="playlist-name"> Playlist Name</div>
       <button class="save-btn">Save</button>   
-</div>
         </ul>
     </div>
     <!-- Preview Modal -->
