@@ -3,6 +3,7 @@ body {
     background-color: #0f001b;
     color: #fff;
 }
+/* Animations */
 @keyframes slide-in {
     from {
       transform: translateX(-100%);
@@ -53,7 +54,7 @@ body {
       transform: translateY(0);
     }
   }
-
+/* Header */
 H1 {
     text-transform: uppercase;
     font-family: 'Noto Sans Symbols 2', sans-serif; 
@@ -76,7 +77,7 @@ H1 {
   bottom: 0;
   z-index: -1;
 }
-
+/* Change City Button */
 #change-city {
   font-family: 'Noto Sans Symbols 2', sans-serif;
   position: fixed;
@@ -109,7 +110,9 @@ H1 {
 
 /* weather */
 .weather-forecast {
-  display: block;
+  float: right;
+  width: 50%;
+  text-align: center;
   font-family: 'Noto Sans Symbols 2', sans-serif;
   background-color: rgba(0, 0, 0, 0.445);
     border-radius: 0.5px;
@@ -122,13 +125,22 @@ H1 {
     font-size: 50px;
     color: #fff;  
 }
+
+/* displayed playlists*/ 
+
 .displayed-playlists {
 box-sizing: border-box;
+float: left;
+width: 70%;
+text-align: center;
 }
 
 /* playlist flex container*/
 .cards {
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cards:after {
@@ -149,13 +161,7 @@ padding: 0;
   color: white;
   animation: slide-up 0.4s ease;
 }
-@media(max-width:767px) {
-  .playlist-card {
-      width: 100%;
-      margin-right: 0;
-      margin-left: 0;
-  }
-}
+
 
 .playlist-title {
   margin: 0;
@@ -221,8 +227,8 @@ h2 {
     font-size: 20px;
     display: block; 
     margin-top: 105px;
-   
     text-align: center;
+    margin-top: 110px;
 }
 
 #location-search h2 {
@@ -343,7 +349,14 @@ select:focus ~ .select-icon svg.icon {
   box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
 }
-
+/* change city button */
+#change-city:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
+}
+/* media queries */
 @media only screen and (max-width: 600px) {
   #change-city {
     font-size: 14px;
@@ -352,9 +365,17 @@ select:focus ~ .select-icon svg.icon {
   }
 }
 
-#change-city:hover {
-  background-color: #e100ff;
-  color: #050801;
-  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
+
+@media (max-width: 767px) {
+  .weather-forecast, .displayed-playlists {
+    width: 100%;
+    float: none;
+  }
+}
+@media(max-width:767px) {
+  .playlist-card {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+  }
 }
