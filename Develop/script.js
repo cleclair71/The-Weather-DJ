@@ -8,10 +8,16 @@ var currentTemp = document.querySelector("#temperature");
 var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
 var currentWeather; //Initialized in displayWeather for use in getPlaylists()
+var weatherModal = document.querySelector("#myModal")
+weatherModal.style.display = "block"
+var changeCityBtn = document.querySelector("#change-city")
 //fardina's code
+//autocomplete function using previously searched cities
 async function displayWeather(city) {
+  input.value = ""
+  //card to display playlist when city is selected
     playlist.style.display = "block";
-    //card to display playlist when city is selected
+    // fetches current weather
     await fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" + 
         city + 
@@ -32,11 +38,46 @@ async function displayWeather(city) {
             currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
         })
 }
+let savedCities = JSON.parse(localStorage.getItem("city")) || []
+
+//event listener
 searchBtn.addEventListener("click", async function () {
-    var searchValue = input.value 
-    await displayWeather(searchValue);
-    getPlaylists();
+  //close modal on submit
+  weatherModal.style.display = "none";
+  var searchValue = input.value 
+  await displayWeather(searchValue);
+  savedCities.push(searchValue);
+  localStorage.setItem("city", JSON.stringify(savedCities));
+  renderSearch()
+  getPlaylists();
 });
+localStorage.clear()
+
+//saving searched cities
+function renderSearch(){
+  var ul = document.querySelector(".city-list")
+  for (var i =0; i< savedCities.length; i++) {
+    var storedCities = savedCities[i]
+    var storedList = document.createElement('li')
+    storedList.classList.add("stored-list")
+    storedList.textContent = storedCities
+    // to display weather for stored list cities
+    storedList.addEventListener("click", function(){
+      displayWeather(storedList.textContent)
+    })
+  }
+  //append list to ul element
+  ul.appendChild(storedList)
+}
+
+//event listener to open modal once change city button is selected
+changeCityBtn.addEventListener("click", function (){
+  weatherModal.style.display = "block";
+})
+
+
+
+
 
 
     

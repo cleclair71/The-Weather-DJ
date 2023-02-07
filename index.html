@@ -1,91 +1,105 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="./Develop/stylesheet.css">
-  <link rel="stylesheet" href="../The-Weather-DJ/public/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <link rel="stylesheet" href="../The-Weather-DJ/Develop/stylesheet.css">
   <title>The Weather DJ</title>
 </head>
 
 <body>
-  <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
-    <video autoplay
-    loop
-    muted
-    class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
-      <source src="../The-Weather-DJ/Assets/images/Line - 144259.mp4" type="video/mp4">
+  <header>
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+      <source src="Assets\images\Line - 144259.mp4" type="video/mp4">
     </video>
-    <h1 class="relative z-30 text-white text-8xl leading-3 font-weatherdj uppercase">The <br> Weather DJ</h1> <!-- tailwind header-->
+    <h1>The<br>Weather DJ</h1>
   </header>
 
   <!-- Modal -->
-  <div id="myModal"
-    class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto">
-    <div id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
+  <div id="myModal" class="modal">
+    <div id="ModalFullscreen">
       <!-- Modal content -->
-      <div
-        class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+      <div class="modal-content1">
         <span class="close">&times;</span>
         <div id="location-search">
-          <h2 class="text-xl font-medium leading-normal text-gray-800">What city are you in?</h2>
+          <h2>What city are you in?</h2>
           <input type="text" id="city-input" placeholder="Enter your city">
-        </div>
+          <div class="search-list">
+            <ul class="city-list">
+          </div>
 
-        <!-- Genre Selection -->
-        <div id="genre-select">
-          <h2>select a genre</h2>
-          <select id="genre-dropdown">
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="hip-hop">Hip-Hop</option>
-            <option value="electronic">Electronic</option>
-            <option value="country">Country</option>
-            <option value="jazz">Jazz</option>
-            <option value="classical">Classical</option>
-            <option value="r&b">R&B</option>
-            <option value="blues">Blues</option>
-            <option value="soul">Soul</option>
-          </select>
+          <!-- Genre Selection -->
+          <div id="genre-select">
+            <h2>select a genre</h2>
+            <select id="genre-dropdown">
+              <option value="pop">Pop</option>
+              <option value="rock">Rock</option>
+              <option value="hip-hop">Hip-Hop</option>
+              <option value="electronic">Electronic</option>
+              <option value="country">Country</option>
+              <option value="jazz">Jazz</option>
+              <option value="classical">Classical</option>
+              <option value="r&b">R&B</option>
+              <option value="blues">Blues</option>
+              <option value="soul">Soul</option>
+            </select>
+            <div class="select-icon">
+              <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                <path
+                  d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
+                </path>
+              </svg>
+            </div>
+          </div>
+          <button id="submit-selection">Submit</button>
         </div>
-        <button id="submit-selection">Submit</button>
       </div>
     </div>
-  </div>
 
+  </div>
 
   <!-- Weather forecast -->
-  <div class="weather-forecast">
-    <h2 id="city-name"></h2>
-    <p id="weather-description"></p>
-    <p id="temperature"></p>
-  </div>
-
-  <!-- Displayed playlists -->
-  <div class="displayed-playlists">
-    <h3>Playlists:</h3>
-  </div>
-  <!-- Preview Modal -->
-  <div id="preview-modal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h3 id="playlist-name"></h3>
-      <ul id="song-list">
-        <!-- Song list will be generated here -->
-      </ul>
+  <div class="wrapper">
+    <div class="row">
+      <div class="column">
+        <div class="weather-forecast">
+          <h2 id="city-name"></h2>
+          <p id="weather-description"></p>
+          <p id="temperature"></p>
+        </div>
+      </div>
+      <!-- Displayed playlists -->
+      <div class="column">
+        <div class="displayed-playlists">
+          <h3>Playlists:</h3>
+        </div>
+      </div>
     </div>
-  </div>
-  <!-- Change City -->
-  <button id="change-city">Change City</button>
-  <script src="./Develop/script.js"></script>
+    <!-- Preview Modal -->
+    <div id="preview-modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="playlist-name"></h3>
+        <ul id="song-list">
+          <!-- Song list will be generated here -->
+        </ul>
+      </div>
+    </div>
+    <!-- Change City -->
+    <button id="change-city">Change City</button>
+    <script src="./Develop/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 
 </html>
