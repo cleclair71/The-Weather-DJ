@@ -7,7 +7,11 @@ var input = document.querySelector("#city-input");
 var currentTemp = document.querySelector("#temperature");
 var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
+var weatherModal = document.querySelector(".modal-content1")
+weatherModal.style.display = "block"
+var changeCityBtn = document.querySelector("#change-city")
 //fardina's code
+//autocomplete function using previously searched cities
 function displayWeather(city) {
   input.value = ""
   //card to display playlist when city is selected
@@ -37,12 +41,14 @@ let savedCities = JSON.parse(localStorage.getItem("city")) || []
 
 //event listener
 searchBtn.addEventListener("click", function () {
-    var searchValue = input.value 
-    displayWeather(searchValue);
-    savedCities.push(searchValue);
-    localStorage.setItem("city", JSON.stringify(savedCities));
-    renderSearch()
-    getPlaylist();
+  //close modal on submit
+  weatherModal.style.display = "none";
+  var searchValue = input.value 
+  displayWeather(searchValue);
+  savedCities.push(searchValue);
+  localStorage.setItem("city", JSON.stringify(savedCities));
+  renderSearch()
+  getPlaylist();
 });
 localStorage.clear()
 
@@ -59,9 +65,16 @@ function renderSearch(){
       displayWeather(storedList.textContent)
     })
   }
-//append list to ul element
+  //append list to ul element
   ul.appendChild(storedList)
 }
+
+//event listener to open modal once change city button is selected
+changeCityBtn.addEventListener("click", function (){
+  weatherModal.style.display = "block";
+})
+
+
 
 
 
