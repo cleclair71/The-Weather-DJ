@@ -11,69 +11,88 @@ var currentWeather; //Initialized in displayWeather for use in getPlaylists()
 var weatherModal = document.querySelector("#myModal")
 weatherModal.style.display = "block"
 var changeCityBtn = document.querySelector("#change-city")
+var closeBtn = document.querySelector(".close")
+
 //fardina's code
-//autocomplete function using previously searched cities
+
 async function displayWeather(city) {
   input.value = ""
   //card to display playlist when city is selected
-    playlist.style.display = "block";
-    // fetches current weather
-    await fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" + 
-        city + 
-        "&appid=" + 
-        apikey + 
-        "&units=imperial"
+  playlist.style.display = "block";
+  // fetches current weather
+  await fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=" + 
+    city + 
+    "&appid=" + 
+    apikey + 
+    "&units=imperial"
     )
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            //name of the city
-            currentCity.innerHTML = data.name;
-            //weather description
-            currentWeather = data.weather[0].main;
-            weather.innerHTML = "Description: " + currentWeather;
-            //temperature
-            currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
-        })
-}
-let savedCities = JSON.parse(localStorage.getItem("city")) || []
-
-//event listener
-searchBtn.addEventListener("click", async function () {
-  //close modal on submit
-  weatherModal.style.display = "none";
-  var searchValue = input.value 
-  await displayWeather(searchValue);
-  savedCities.push(searchValue);
-  localStorage.setItem("city", JSON.stringify(savedCities));
-  renderSearch()
-  getPlaylists();
-});
-localStorage.clear()
-
-//saving searched cities
-function renderSearch(){
-  var ul = document.querySelector(".city-list")
-  for (var i =0; i< savedCities.length; i++) {
-    var storedCities = savedCities[i]
-    var storedList = document.createElement('li')
-    storedList.classList.add("stored-list")
-    storedList.textContent = storedCities
-    // to display weather for stored list cities
-    storedList.addEventListener("click", function(){
-      displayWeather(storedList.textContent)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      //name of the city
+      currentCity.innerHTML = data.name;
+      //weather description
+      currentWeather = data.weather[0].main;
+      weather.innerHTML = "Description: " + currentWeather;
+      //temperature
+      currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
     })
   }
+  
+  //event listener for closing modal on x
+  closeBtn.addEventListener("click", function () {
+    weatherModal.style.display = "none";
+  });
+    
+
+  //event listener
+  searchBtn.addEventListener("click", async function () {
+    let savedCities = JSON.parse(localStorage.getItem("city")) || []
+    //close modal on submit abd save input
+    weatherModal.style.display = "none";
+    var searchValue = input.value 
+    await displayWeather(searchValue);
+    savedCities.push(searchValue);
+    localStorage.setItem("city", JSON.stringify(savedCities));
+    renderSearch()
+    getPlaylists();
+  });
+  
+  localStorage.clear()
+  
+  //saving searched cities
+  function renderSearch(){
+    let savedCities = JSON.parse(localStorage.getItem("city")) || []
+    //autocomplete function using previously searched cities
+    $("#city-input").autocomplete({
+      source: savedCities,
+     
+    });
+
+    //event listener to open modal once change city button is selected
+    changeCityBtn.addEventListener("click", function (){
+      weatherModal.style.display = "block";
+    })
+    
+    //previous appending list
+    // var ul = document.querySelector(".city-list")
+    // for (var i =0; i< savedCities.length; i++) {
+  //   var storedCities = savedCities[i]
+    //var storedList = document.createElement('li')
+    //storedList.classList.add("stored-list")
+    //storedList.textContent = storedCities
+    // to display weather for stored list cities
+    // storedList.addEventListener("click", function(){
+    //   displayWeather(storedList.textContent)
+    // })
+  //}
+
   //append list to ul element
-  ul.appendChild(storedList)
+  //ul.appendChild(storedList)
 }
 
-//event listener to open modal once change city button is selected
-changeCityBtn.addEventListener("click", function (){
-  weatherModal.style.display = "block";
-})
 
 
 
