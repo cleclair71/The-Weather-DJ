@@ -325,9 +325,10 @@ select:focus {
   display: block;
 }
 .select-icon {
+  display:inline-block;
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: -10px;
+  right: 10px;
   width: 30px;
   height: 36px;
   pointer-events: none;
