@@ -141,8 +141,7 @@ function getPlaylists() {
       mood = "Uncertainty";
   }
   //Set the animated video
-  var weathermp4Display = document.getElementById("weathermp4").children[0]; //Get source tag
-  console.log(weathermp4Display);
+  var weathermp4Display = document.getElementById("weathermp4").children[0]; //Get source tag from video
   switch (currentWeather) {
     case "Rain":
       weathermp4Display.setAttribute("src", "Assets/images/rain.mp4");
@@ -161,19 +160,30 @@ function getPlaylists() {
       weathermp4Display.setAttribute("src", "Assets/images/snow.mp4");
       break;
     case "Clouds":
-      weathermp4Display.setAttribute("src", "Assets/images/sunny.mp4");
-    case "Mist":
-    case "Haze":
-    case "Smoke":
-    case "Fog":
-    case "Sand":
-    case "Dust":
-      weathermp4Display.setAttribute("src", "Assets/images/reduced-vision.mp4");
+      weathermp4Display.setAttribute("src", "Assets/images/clouds.mp4");
       break;
-    default:
+    case "Mist":
+      weathermp4Display.setAttribute("src", "Assets/images/mist.mp4");
+      break;
+    case "Haze":
+      weathermp4Display.setAttribute("src", "Assets/images/haze.mp4");
+      break;
+    case "Smoke":
+      weathermp4Display.setAttribute("src", "Assets/images/smoke.mp4");
+      break;
+    case "Fog":
+      weathermp4Display.setAttribute("src", "Assets/images/fog.mp4");
+      break;
+    case "Sand":
+      weathermp4Display.setAttribute("src", "Assets/images/sand.mp4");
+      break;
+    case "Dust":
+      weathermp4Display.setAttribute("src", "Assets/images/dust.mp4");
+      break;
+    default: //Ash and tornado
       weathermp4Display.setAttribute("src", "Assets/images/danger.mp4");
   }
-  weathermp4Display.parentElement.style.display = "block";
+  weathermp4Display.parentElement.style.display = "block"; //Display video
 
   /* 
   Call to Youtube's API to get 5 playlist results using 'mood' based on the weather and 'genre' 
