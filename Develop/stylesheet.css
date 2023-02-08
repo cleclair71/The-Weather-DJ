@@ -492,7 +492,7 @@ p #temperature {
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
-video .hide {
+video .hid3 {
   position: relative;
   margin: auto;
   max-width: 100%;
@@ -602,7 +602,10 @@ box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
   }
 
   h2 {
-    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+    font-size: 50px;
+    color: #fff;
     margin-top: 80px;
   }
 
@@ -666,11 +669,6 @@ box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
     height: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0px;
-  }
-
-  h2 {
-    font-size: 18px;
-    margin-top: 100px;
   }
 
   .rt-column video {
