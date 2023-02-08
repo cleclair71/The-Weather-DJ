@@ -4,7 +4,7 @@ body {
   color: #fff;
 }
 
-/* Animations */
+/* Cassie Animations */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);
@@ -67,7 +67,7 @@ body {
   }
 }
 
-/* Header */
+/* Cassie Header */
 H1 {
   text-transform: uppercase;
   font-family: 'Noto Sans Symbols 2', sans-serif;
@@ -121,7 +121,7 @@ H1 {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-/* input modal */
+/* cassie input modal */
 #myModal {
   color: #ffffff;
   position: fixed;
@@ -218,6 +218,7 @@ h2 {
 
 }
 
+/* jackson */
 #input-error {
   color: red;
   font-weight: bold;
@@ -428,7 +429,7 @@ select:focus~.select-icon svg.icon {
   border: 1.5px solid #e100ff;
   padding: 10px;
 }
-
+/* playlist preview button */
 .preview-button {
   background-color: rgba(0, 0, 0, 0.541);
   border: none;
@@ -457,7 +458,7 @@ select:focus~.select-icon svg.icon {
   
 }
 
-/* weather */
+/* WEATHER */
 .weather-forecast {
   height: 100%;
   text-align: center;
@@ -479,6 +480,50 @@ select:focus~.select-icon svg.icon {
 p {
   font-family: 'Noto Sans Symbols 2', sans-serif;
   font-size: 30px;
+}
+/* weather mp4 */
+.hide {
+  display: none;
+  height: auto;
+  max-width: 50%;
+  /* display: block; */
+  position: relative;
+  margin: auto;
+}
+
+p #temperature {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+video .hid {
+  position: relative;
+  margin: auto;
+  max-width: 100%;
+  display: block;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 50px;
+}
+
+.footer {
+  width: 100vw;
+  height: 50px;
+  background-size: cover;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  text-align: center;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.445);
+  background-color: #4d008460;
+  padding-top: 10px;
+ 
 }
 /* media queries */
 @media only screen and (max-width: 600px) {

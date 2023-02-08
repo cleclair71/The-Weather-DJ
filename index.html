@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
   <link rel="stylesheet" href="./Develop/stylesheet.css">
   <title>The Weather DJ</title>
+  <link rel = "icon" src = 
+"Assets\images\The weather dj (1).jpg" 
+        type = "image/x-icon">
 </head>
 
 <body>
@@ -86,7 +89,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Weather forecast -->
   <div class="wrapper">
     <div class="row">
@@ -95,6 +98,14 @@
           <h2 id="city-name"></h2>
           <p id="weather-description"></p>
           <p id="temperature"></p>
+          <br>
+          <br>
+          <br>
+          <div id="weathermp4" class="hide">
+            <video width="932" height= autoplay loop muted>
+              <source src="" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
       <!-- Displayed playlists -->
@@ -111,6 +122,9 @@
     </div>
     <!-- Change City -->
     <button id="change-city">Change City</button>
+    <footer class="footer">
+      <h6> Made by: Jackson, Cassie, Fardina, Rajvir, Hamzah, and Aleks </h6>
+    </footer>
     <script src="./Develop/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
