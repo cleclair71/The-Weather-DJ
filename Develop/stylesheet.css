@@ -391,8 +391,6 @@ select:focus ~ .select-icon svg.icon {
 
 /* right hand side */
 
-.displayed-playlists img {}
-
 .displayed-playlists h3 { 
   position: relative;
 	text-align: left;
