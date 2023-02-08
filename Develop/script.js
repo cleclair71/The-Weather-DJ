@@ -44,33 +44,6 @@ async function displayWeather(city) {
         currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
     })
 }
-let savedCities = JSON.parse(localStorage.getItem("city")) || []
-
-//event listener
-searchBtn.addEventListener("click", async function () {
-  //close modal on submit
-  weatherModal.style.display = "none";
-  var searchValue = input.value 
-  await displayWeather(searchValue);
-  savedCities.push(searchValue);
-  localStorage.setItem("city", JSON.stringify(savedCities));
-  renderSearch()
-  getPlaylists();
-});
-
-//saving searched cities
-function renderSearch(){
-  var ul = document.querySelector(".city-list")
-  for (var i =0; i< savedCities.length; i++) {
-    var storedCities = savedCities[i]
-    var storedList = document.createElement("li")
-    storedList.classList.add("stored-list")
-    storedList.textContent = storedCities
-    // to display weather for stored list cities
-    storedList.addEventListener("click", function(){
-      displayWeather(storedList.textContent)
-    })
-  }
   
   //event listener for closing modal on x
   closeBtn.addEventListener("click", function () {
