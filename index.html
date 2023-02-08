@@ -5,16 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-  <link rel="stylesheet" href="../The-Weather-DJ/Develop/stylesheet.css">
+  <link rel="stylesheet" href="./Develop/stylesheet.css">
   <title>The Weather DJ</title>
+  <link rel="icon" src="Assets\images\The weather dj (1).jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -26,46 +28,64 @@
   </header>
 
   <!-- Modal -->
+
   <div id="myModal" class="modal">
+
     <div id="ModalFullscreen">
       <!-- Modal content -->
       <div class="modal-content1">
-        <span class="close">&times;</span>
-        <div id="location-search">
-          <h2>What city are you in?</h2>
-          <input type="text" id="city-input" placeholder="Enter your city">
-          <div class="search-list">
-            <ul class="city-list">
-          </div>
 
-          <!-- Genre Selection -->
-          <div id="genre-select">
-            <h2>select a genre</h2>
-            <select id="genre-dropdown">
-              <option value="pop">Pop</option>
-              <option value="rock">Rock</option>
-              <option value="hip-hop">Hip-Hop</option>
-              <option value="electronic">Electronic</option>
-              <option value="country">Country</option>
-              <option value="jazz">Jazz</option>
-              <option value="classical">Classical</option>
-              <option value="r&b">R&B</option>
-              <option value="blues">Blues</option>
-              <option value="soul">Soul</option>
-            </select>
-            <div class="select-icon">
-              <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
-                <path
-                  d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
-                </path>
-              </svg>
+        <div class="page-wrapper">
+          <div class="row">
+            <div class="column">
+              <div class="lft-column">
+                <span class="close" id="close-input">&times;</span>
+                <div id="location-search">
+                  <h2>What city are you in?</h2>
+                  <p id="input-error"></p>
+                  <input type="text" id="city-input" placeholder="Enter your city">
+                  <div class="search-list">
+                    <ul class="city-list">
+                  </div>
+
+                  <!-- Genre Selection -->
+                  <div id="genre-select">
+                    <h2>select a genre</h2>
+                    <select id="genre-dropdown">
+                      <option value="pop">Pop</option>
+                      <option value="rock">Rock</option>
+                      <option value="hip-hop">Hip-Hop</option>
+                      <option value="electronic">Electronic</option>
+                      <option value="country">Country</option>
+                      <option value="jazz">Jazz</option>
+                      <option value="classical">Classical</option>
+                      <option value="r&b">R&B</option>
+                      <option value="blues">Blues</option>
+                      <option value="soul">Soul</option>
+                    </select>
+                    <div class="select-icon">
+                      <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                        <path
+                          d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <button id="submit-selection">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="rt-column">
+                <video width="300" height="300" autoplay loop muted>
+                  <source src="Assets\images\The weather dj.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
           </div>
-          <button id="submit-selection">Submit</button>
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Weather forecast -->
@@ -76,30 +96,36 @@
           <h2 id="city-name"></h2>
           <p id="weather-description"></p>
           <p id="temperature"></p>
+          <br>
+          <br>
+          <br>
+          <div id="weathermp4" class="hide">
+            <video width="932" height=autoplay loop muted>
+              <source src="" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
       <!-- Displayed playlists -->
       <div class="column">
         <div class="displayed-playlists">
-          <h3>Playlists:</h3>
+          <h2>Playlists</h2>
         </div>
       </div>
     </div>
     <!-- Preview Modal -->
-    <div id="preview-modal" class="modal">
+    <div id="preview-modal" class="modal1">
       <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3 id="playlist-name"></h3>
-        <ul id="song-list">
-          <!-- Song list will be generated here -->
-        </ul>
-      </div>
+      <span class="close" id="preview-button">&times;</span>
     </div>
     <!-- Change City -->
     <button id="change-city">Change City</button>
-    <script src="./Develop/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  </div>
+  <footer class="footer">
+    <h6> Made by: Jackson, Cassie, Fardina, Rajvir, Hamzah, and Aleks </h6>
+  </footer>
+  <script src="./Develop/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 
 </html>
