@@ -1,4 +1,4 @@
-
+/* Cassie's code */
 body {
     background-color: #0f001b;
     color: #fff;
@@ -218,9 +218,35 @@ padding: 0;
     border: 1.5px solid #e100ff;
   border-radius: 7px;  
   box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
-
+  /* display: flex; */
+  margin: 15px;
 }
 
+.modal-content1 .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.modal-content1 .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.lft-column {
+  height: 100px;
+}
+.rt-column {
+  height: 100px;
+}
+
+.rt-column video {
+position: relative;
+width:fit-content;
+
+}
 h2 {
   text-transform: uppercase;
     font-family: 'Noto Sans Symbols 2', sans-serif; 
@@ -276,6 +302,7 @@ h2 {
       position: relative;
       
 }
+
 select {
   width: 100%;
   height: 50px;
@@ -296,7 +323,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-  transform: translateY(-32px);
+
   border-radius: 0.5px;
 }
 
@@ -319,12 +346,13 @@ select:focus {
   text-align: center;
   text-decoration: none;
   margin: 10px auto;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 0.5px;
   opacity: 0.8;
   transition: 0.3s;
   display: block;
+  text-transform: uppercase;
 }
 .select-icon {
   display:inline-block;
@@ -337,7 +365,7 @@ select:focus {
   border: 2px solid rgba(37, 37, 37, 0.582);
   padding-left: 5px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  transform: translateY(-15px);
+
 }
 .select-icon svg.icon {
   transition: fill 0.3s ease;
@@ -360,6 +388,34 @@ select:focus ~ .select-icon svg.icon {
   box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005); 
 }
+
+/* right hand side */
+
+.displayed-playlists img {}
+
+.displayed-playlists h3 { 
+  position: relative;
+	text-align: left;
+  float: left;
+	width: 40%;
+
+}
+
+.displayed-playlists a {
+  box-shadow: 0 15px 30px 1px grey;
+	background: rgba(255, 255, 255, 0.90);
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 350px;
+	width: 700px;
+  
+}
+
+.displayed-playlists button {
+
+}
 /* media queries */
 @media only screen and (max-width: 600px) {
   #change-city {
@@ -367,21 +423,80 @@ select:focus ~ .select-icon svg.icon {
     padding: 5px 10px;
     margin-right: 20px;
   }
-}
-
-
-@media (max-width: 767px) {
-  .weather-forecast, .displayed-playlists {
-    width: 100%;
-    float: none;
+  H1 {
+    font-size: 50px;
   }
+  #city-input {
+    max-width: 150px;
+    font-size: 10px;
+    }
+    
+    h2 {
+    font-size: 14px;
+    margin-top: 80px;
+    }
+    
+    #genre-select {
+      max-width: 150px;
+      font-size: 14px;
+    }
+    .rt-column video {
+      display: none;
+      }
+  
 }
-@media(max-width:767px) {
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
   .playlist-card {
       width: 100%;
       margin-right: 0;
       margin-left: 0;
   }
+  H1 {
+    font-size: 60px;
+  }
+  .weather-forecast, .displayed-playlists {
+    width: 100%;
+    float: none;
+  }
+  .modal-content1 {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0px;
+    }
+    
+    h2 {
+    font-size: 18px;
+    margin-top: 100px;
+    }
+    .rt-column video {
+      display: none;
+      }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  H1 {
+    font-size: 70px;
+  }
+  .modal-content1 {
+    width: 90%;
+    height: 90%;
+    }
+    .rt-column video {
+      display: none;
+      }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  H1 {
+    font-size: 80px;
+  }
+  .modal-content1 {
+    width: 80%;
+    height: 80%;
+    }
+    
 }
 
 .row {

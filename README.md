@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -31,14 +31,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/cleclair71/The-Weather-DJ/blob/develop/Assets/images/The%20weather%20dj.gif">
+    <img src="Assets\images\The weather dj.gif" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">The Weather DJ</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Let the Weather Set the Beat
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -86,16 +86,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The Weather DJ is an innovative web application that combines the power of two API's, YouTube and OpenWeather, to create a unique and personalized musical experience. Our mission is to bring you a fun and engaging way to listen to music based on your location and mood.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+With The Weather DJ, you can start by entering your location and selecting a genre of music that best suits your mood. Upon submitting your selection, you will be presented with five playlists curated specifically for the weather in your area. The weather in that area will affect the mood of the genre, ensuring you get the perfect playlist for the moment.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+If you're not satisfied with your selection, simply click the "Change City" button to reselect your city or genre. To get a closer look at the songs in each playlist, you can open the modal and see the full list of tracks.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,16 +98,11 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![HTML]]
+* [![CSS]]
+* [![javaScript]]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,13 +158,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] CSS framework other than Bootstrap
+- [x] Deployed to GitHub Pages
+- [ ] Interactive (i.e: accept and respond to user input)
+- [ ] Use of modals
+- [ ] Two server-side APIs
+- [ ] Client-side storage to store persistent data
+- [ ] Responsive
+- [ ] Polished UI
+- [ ] Clean repository that meets quality coding standards
+- [ ] Quality README
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
@@ -185,16 +178,15 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Tasks and Roles 
+Cassie - CSS design and ReadME template
+Jackson - JavaScript
+Fardina - 
+Hamzah - 
+Rajvir - 
+Aleks - 
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
