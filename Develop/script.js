@@ -10,12 +10,13 @@ var currentTemp = document.querySelector("#temperature");
 var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
 var currentWeather; //Initialized in displayWeather for use in getPlaylists()
-var weatherModal = document.querySelector("#myModal")
-weatherModal.style.display = "block"
-var changeCityBtn = document.querySelector("#change-city")
-var closeBtn = document.querySelector(".close")
+var weatherModal = document.querySelector("#myModal");
+weatherModal.style.display = "block";
+var changeCityBtn = document.querySelector("#change-city");
+var closeInputBtn = document.querySelector("#close-input");
+closeInputBtn.style.display = "none";
 var previewModal = document.querySelector("#preview-modal");
-var previewCloseBtn = document.querySelector("#close-preview");
+var previewCloseBtn = document.querySelector("#preview-button");
 previewCloseBtn.style.display = "none";
 //fardina's code
 
@@ -61,7 +62,7 @@ function displayWeather(city) {
 }
   
   //event listener for closing modal on x
-  closeBtn.addEventListener("click", function () {
+  closeInputBtn.addEventListener("click", function () {
     weatherModal.style.display = "none";
   });
     
@@ -80,9 +81,7 @@ function displayWeather(city) {
     var searchValue = input.value
     displayWeather(searchValue);
   });
-  
-  //localStorage.clear()
-  
+
   //saving searched cities
   function renderSearch(){
     let savedCities = JSON.parse(localStorage.getItem("city")) || [];
@@ -100,15 +99,23 @@ function displayWeather(city) {
     //event listener to open modal once change city button is selected
     changeCityBtn.addEventListener("click", function () {
       weatherModal.style.display = "block";
+      closeInputBtn.style.display = "block";
     });
   }
 
 
 //jackson's code 
-var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
+//var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
 //var key = "AIzaSyCTPCZ0BW1oVO9rOTLhWPKmaxI45OKeyvA" //Hamzah's Key
+var key = "AIzaSyBSZpk2XNTzLPpNRXXODZZ7BxzVoCgkBrs" //Spare Key
 
 function getPlaylists() {
+  //Clear any cached playlist previews
+  if (previewModal.children.length > 1) {
+    for (var i=1; i<previewModal.children.length; i++) {
+      previewModal.removeChild(previewModal.children[i]);
+    }
+  }
   var genre = document.querySelector("#genre-dropdown").value;
   switch (currentWeather) {
     case "Rain":
@@ -176,7 +183,7 @@ $(playlist).on("click", ".preview-button", function (event) {
   getPlaylistItems(event.target.dataset.playlistid);
 });
 
-$("#preview-modal").on("click", "#close-preview", function() {
+$("#preview-modal").on("click", ".close", function() {
   previewCloseBtn.style.display = "none";
   $(".modal-content").remove();
  })
@@ -194,13 +201,18 @@ function getPlaylistItems(playlistId) {
 }
 
 //Display each song of a given playlist within a collapsible div
-function showPlaylistItems(playlistData, playlistid) { 
+function showPlaylistItems(playlistData, playlistid) {  
   previewCloseBtn.style.display = "block";
+  //Clear any cached playlist previews
+  if (previewModal.children.length > 1) {
+    for (var i=1; i<previewModal.children.length; i++) {
+      previewModal.removeChild(previewModal.children[i]);
+    }
+  }
   for (var i=0; i<Object.keys(playlistData.items).length; i++) {
     if (playlistData.items[i].snippet.title == "Deleted video") {
       continue;
     }
-    console.log(playlistData.items[i]);
     var previewContentEl = document.createElement("div");
     previewContentEl.setAttribute("class", "modal-content");
     previewContentEl.innerHTML = 
