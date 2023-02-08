@@ -3,6 +3,13 @@ body {
   background-color: #0f001b;
   color: #fff;
 }
+span{
+  cursor: pointer;
+}
+
+
+
+
 /* Animations */
 @keyframes slide-in {
   from {
