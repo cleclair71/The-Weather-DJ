@@ -19,12 +19,10 @@ var previewCloseBtn = document.querySelector("#close-preview");
 previewCloseBtn.style.display = "none";
 //fardina's code
 
-async function displayWeather(city) {
+function displayWeather(city) {
   input.value = "";
-  //card to display playlist when city is selected
-  playlist.style.display = "block";
   // fetches current weather
-  await fetch(
+  fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" + 
     city + 
     "&appid=" + 
@@ -32,16 +30,32 @@ async function displayWeather(city) {
     "&units=imperial"
     )
     .then(function (response) {
-        return response.json();
+      if (response.status !== 200) {
+        document.querySelector('#input-error').textContent = 'Please enter a valid city!';
+      }
+      else {
+        document.querySelector('#input-error').textContent = '';
+        return response.json(); 
+      }
     })
     .then(function (data) {
-        //name of the city
-        currentCity.innerHTML = data.name;
-        //weather description
-        currentWeather = data.weather[0].main;
-        weather.innerHTML = "Description: " + currentWeather;
-        //temperature
-        currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
+      if (data === undefined) {
+        return;
+      }
+      //name of the city
+      currentCity.innerHTML = data.name;
+      //weather description
+      currentWeather = data.weather[0].main;
+      weather.innerHTML = "Description: " + currentWeather;
+      //temperature
+      currentTemp.innerHTML = "Temperature: " + Math.floor(data.main.temp) + `&#8457`;
+      savedCities.push(city);
+      localStorage.setItem("city", JSON.stringify(savedCities));
+      //close modal
+      weatherModal.style.display = "none";
+      //card to display playlist when city is selected
+      playlist.style.display = "block";
+      getPlaylists();
     })
 }
   
@@ -54,14 +68,9 @@ async function displayWeather(city) {
   renderSearch() 
 
   //event listener
-  searchBtn.addEventListener("click", async function () {
-    //close modal on submit abd save input
-    weatherModal.style.display = "none";
+  searchBtn.addEventListener("click", function () {
     var searchValue = input.value
-    await displayWeather(searchValue);
-    savedCities.push(searchValue);
-    localStorage.setItem("city", JSON.stringify(savedCities));
-    getPlaylists();
+    displayWeather(searchValue);
   });
   
   //localStorage.clear()
@@ -84,22 +93,6 @@ async function displayWeather(city) {
     changeCityBtn.addEventListener("click", function () {
       weatherModal.style.display = "block";
     });
-
-    //previous appending list
-    // var ul = document.querySelector(".city-list")
-    // for (var i =0; i< savedCities.length; i++) {
-    //   var storedCities = savedCities[i]
-    //var storedList = document.createElement('li')
-    //storedList.classList.add("stored-list")
-    //storedList.textContent = storedCities
-    // to display weather for stored list cities
-    // storedList.addEventListener("click", function(){
-    //   displayWeather(storedList.textContent)
-    // })
-    //}
-
-    //append list to ul element
-    //ul.appendChild(storedList)
   }
 
 
