@@ -42,6 +42,7 @@ function displayWeather(city) {
       if (data === undefined) {
         return;
       }
+
       //name of the city
       currentCity.innerHTML = data.name;
       //weather description
@@ -66,6 +67,13 @@ function displayWeather(city) {
     
   let savedCities = JSON.parse(localStorage.getItem("city")) || []
   renderSearch() 
+
+  //event listener
+  input.addEventListener("keyup", function (event){
+    if (event.keyCode == 13){
+      searchBtn.click()
+    }
+  })
 
   //event listener
   searchBtn.addEventListener("click", function () {
