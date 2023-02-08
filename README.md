@@ -32,7 +32,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/cleclair71/The-Weather-DJ/blob/develop/Assets/images/The%20weather%20dj.gif">
-    <img src="Assets\images\The weather dj.gif" alt="Logo" width="80" height="80">
+    <img src="Assets\images\The weather dj.gif" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">The Weather DJ</h3>
