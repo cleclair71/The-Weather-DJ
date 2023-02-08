@@ -46,17 +46,17 @@ async function displayWeather(city) {
     weatherModal.style.display = "none";
   });
     
+  let savedCities = JSON.parse(localStorage.getItem("city")) || []
+  renderSearch() 
 
   //event listener
   searchBtn.addEventListener("click", async function () {
-    let savedCities = JSON.parse(localStorage.getItem("city")) || []
     //close modal on submit abd save input
     weatherModal.style.display = "none";
-    var searchValue = input.value 
+    var searchValue = input.value
     await displayWeather(searchValue);
     savedCities.push(searchValue);
     localStorage.setItem("city", JSON.stringify(savedCities));
-    renderSearch()
     getPlaylists();
   });
   
@@ -65,9 +65,15 @@ async function displayWeather(city) {
   //saving searched cities
   function renderSearch(){
     let savedCities = JSON.parse(localStorage.getItem("city")) || [];
-    //autocomplete function using previously searched cities
+    let setSavedCities = [...new Set(savedCities)]
+    
+    //autocomplete function using previously searched cities using jquery
     $("#city-input").autocomplete({
-      source: savedCities,
+      source: function(request, response){
+        var results = $.ui.autocomplete.filter(setSavedCities, request.term); //gets rid of duplicate searches
+        
+        response(results.slice(0, 3)) //only shows 3 options in autocomplete
+      }
     });
 
     //event listener to open modal once change city button is selected
