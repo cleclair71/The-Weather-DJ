@@ -1,92 +1,107 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@t7/weather-api"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@t7/spotify-api"></script>
-    <title>The Weather DJ</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <link rel="stylesheet" href="../The-Weather-DJ/Develop/stylesheet.css">
+  <title>The Weather DJ</title>
 </head>
 
 <body>
-    <h1>The Weather DJ</h1>
+  <header>
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+      <source src="Assets\images\Line - 144259.mp4" type="video/mp4">
+    </video>
+    <h1>The<br>Weather DJ</h1>
+  </header>
 
-    <!-- Location Search -->
-    <div id="location-search">
-        <input type="text" id="city-input" placeholder="Enter your city">
-        <button id="submit-city">Submit</button>
-    </div>
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div id="ModalFullscreen">
+      <!-- Modal content -->
+      <div class="modal-content1">
+        <span class="close">&times;</span>
+        <div id="location-search">
+          <h2>What city are you in?</h2>
+          <input type="text" id="city-input" placeholder="Enter your city">
+          <div class="search-list">
+            <ul class="city-list">
+          </div>
 
-    <!-- Weather forecast -->
-    <div class="weather-forecast">
-        <h2 id="city-name"></h2>
-        <p id="weather-description"></p>
-        <p id="temperature"></p>
-    </div>
-
-    <!-- Genre Selection -->
-    <div id="genre-select">
-        <select id="genre-dropdown">
-            <option value="pop">Pop</option>
-            <option value="rock">Rock</option>
-            <option value="hip-hop">Hip-Hop</option>
-            <option value="electronic">Electronic</option>
-            <option value="country">Country</option>
-            <option value="jazz">Jazz</option>
-            <option value="classical">Classical</option>
-            <option value="r&b">R&B</option>
-            <option value="blues">Blues</option>
-            <option value="soul">Soul</option>
-        </select>
-        <button id="submit-genre">Submit</button>
-    </div>
-    <!-- Displayed playlists -->
-    <div class="displayed-playlists">
-
-        <div class="playlistPageContainer">
-            <div class="titleHolder">
-            <h2 id="title"></h2>
-            <h4 id="weather-desc"></h4>
+          <!-- Genre Selection -->
+          <div id="genre-select">
+            <h2>select a genre</h2>
+            <select id="genre-dropdown">
+              <option value="pop">Pop</option>
+              <option value="rock">Rock</option>
+              <option value="hip-hop">Hip-Hop</option>
+              <option value="electronic">Electronic</option>
+              <option value="country">Country</option>
+              <option value="jazz">Jazz</option>
+              <option value="classical">Classical</option>
+              <option value="r&b">R&B</option>
+              <option value="blues">Blues</option>
+              <option value="soul">Soul</option>
+            </select>
+            <div class="select-icon">
+              <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                <path
+                  d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
+                </path>
+              </svg>
             </div>
-
-        <h3>Playlists:</h3>
+          </div>
+          <button id="submit-selection">Submit</button>
         </div>
+      </div>
+    </div>
 
-        <ul id="playlists">
+  </div>
 
-            <!-- Playlists will be generated here -->
-                <div class="playlist">
-                        <div class="playlistPlaceholder">
-
-                        </div>
-                        <div class="playlistContainer">
-                            <div class="playlistDetails">
-                            <p class="playlistName"></p>
-                            <p class="playlistType"></p>
-                            </div>
-                            <button class="play-button"></button>
-                        </div>
-                        <!-- <div class="saveButton"></div>  -->
-                    </div>
-        </ul>
+  <!-- Weather forecast -->
+  <div class="wrapper">
+    <div class="row">
+      <div class="column">
+        <div class="weather-forecast">
+          <h2 id="city-name"></h2>
+          <p id="weather-description"></p>
+          <p id="temperature"></p>
+        </div>
+      </div>
+      <!-- Displayed playlists -->
+      <div class="column">
+        <div class="displayed-playlists">
+          <h3>Playlists:</h3>
+        </div>
+      </div>
     </div>
     <!-- Preview Modal -->
     <div id="preview-modal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="playlist-name"></h3>
-            <ul id="song-list">
-                <!-- Song list will be generated here -->
-            </ul>
-        </div>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="playlist-name"></h3>
+        <ul id="song-list">
+          <!-- Song list will be generated here -->
+        </ul>
+      </div>
     </div>
     
 
     <!-- Change City -->
     <button id="change-city">Change City</button>
+    <script src="./Develop/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 
 </html>
