@@ -1,5 +1,3 @@
-
-
 //variables
 var apikey = "2699b95b9f3bb5523129bfe9fb508790";
 var searchBtn = document.querySelector("#submit-selection");
@@ -117,6 +115,7 @@ function getPlaylists() {
     }
   }
   var genre = document.querySelector("#genre-dropdown").value;
+  //Set the mood
   switch (currentWeather) {
     case "Rain":
     case "Drizzle":
@@ -126,6 +125,7 @@ function getPlaylists() {
       mood = "Happy";
       break;
     case "Thunderstorm":
+    case "Squall":
       mood = "Angsty";
       break;
     case "Snow":
@@ -133,9 +133,47 @@ function getPlaylists() {
       break;
     case "Clouds":
       mood = "Chill";
+      break;
+    case "Mist":
+      mood = "Focus";
+      break;
     default:
-      mood = "Focus"
+      mood = "Uncertainty";
   }
+  //Set the animated video
+  var weathermp4Display = document.getElementById("weathermp4").children[0]; //Get source tag
+  console.log(weathermp4Display);
+  switch (currentWeather) {
+    case "Rain":
+      weathermp4Display.setAttribute("src", "Assets/images/rain.mp4");
+      break;
+    case "Drizzle":
+      weathermp4Display.setAttribute("src", "Assets/images/drizzle.mp4");
+      break;
+    case "Clear":
+      weathermp4Display.setAttribute("src", "Assets/images/sunny.mp4");
+      break;
+    case "Thunderstorm":
+    case "Squall":
+      weathermp4Display.setAttribute("src", "Assets/images/lightning.mp4");
+      break;
+    case "Snow":
+      weathermp4Display.setAttribute("src", "Assets/images/snow.mp4");
+      break;
+    case "Clouds":
+      weathermp4Display.setAttribute("src", "Assets/images/sunny.mp4");
+    case "Mist":
+    case "Haze":
+    case "Smoke":
+    case "Fog":
+    case "Sand":
+    case "Dust":
+      weathermp4Display.setAttribute("src", "Assets/images/reduced-vision.mp4");
+      break;
+    default:
+      weathermp4Display.setAttribute("src", "Assets/images/danger.mp4");
+  }
+  weathermp4Display.parentElement.style.display = "block";
 
   /* 
   Call to Youtube's API to get 5 playlist results using 'mood' based on the weather and 'genre' 
@@ -226,4 +264,3 @@ function showPlaylistItems(playlistData, playlistid) {
   }
 }
 //rajvir's code
-        
