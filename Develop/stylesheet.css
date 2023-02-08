@@ -3,6 +3,9 @@ body {
     background-color: #0f001b;
     color: #fff;
 }
+
+
+
 /* Animations */
 @keyframes slide-in {
     from {
@@ -320,7 +323,8 @@ select:focus {
   margin: 10px auto;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 0.5px;
+
+    border-radius: 0.5px;
   opacity: 0.8;
   transition: 0.3s;
   display: block;
