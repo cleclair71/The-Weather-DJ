@@ -375,16 +375,6 @@ select:focus~.select-icon svg.icon {
   list-style: none;
 }
 
-/* .p-title {
-  text-transform: uppercase;
-    font-family: 'Noto Sans Symbols 2', sans-serif; 
-    font-size: 50px !important; 
-    color: #fff;  
-    text-align: center;
-  display: block;
-  position: relative;
-  margin: auto;
-} */
 .displayed-playlists img {
   height: auto;
   max-width: 50%;
