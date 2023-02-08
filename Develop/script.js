@@ -14,6 +14,8 @@ var weatherModal = document.querySelector("#myModal")
 weatherModal.style.display = "block"
 var previewModal = document.querySelector("#preview-modal");
 var changeCityBtn = document.querySelector("#change-city");
+var previewCloseBtn = document.querySelector("#close");
+previewCloseBtn.style.display = "none";
 //fardina's code
 //autocomplete function using previously searched cities
 async function displayWeather(city) {
@@ -150,6 +152,12 @@ $(playlist).on("click", ".preview-button", function (event) {
   getPlaylistItems(event.target.dataset.playlistid);
 });
 
+$("#preview-modal").on("click", "#close", function() {
+  previewCloseBtn.style.display = "none";
+  $(".modal-content").remove();
+ })
+
+
 //Get each song within the playlist when user clicks to expand
 function getPlaylistItems(playlistId) {
   fetch ("https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=" + playlistId + "&fields=items/snippet(title, thumbnails, resourceId)&key=" + key)
@@ -163,6 +171,7 @@ function getPlaylistItems(playlistId) {
 
 //Display each song of a given playlist within a collapsible div
 function showPlaylistItems(playlistData, playlistid) { 
+  previewCloseBtn.style.display = "block";
   for (var i=0; i<Object.keys(playlistData.items).length; i++) {
     if (playlistData.items[i].snippet.title == "Deleted video") {
       continue;
