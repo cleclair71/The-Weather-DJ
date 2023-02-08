@@ -497,7 +497,7 @@ video .hide {
   padding-top: 50px;
 }
 
-/* PREVIEW MODAL */
+/* cassie PREVIEW MODAL */
 
 .wrapper .modal1 { 
   position:fixed;
@@ -510,7 +510,7 @@ video .hide {
   height: 80%;
   justify-content: center;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.541);
+  background-color: rgb(0, 0, 0);
   border-radius: 20px;
  border: 1.5px solid #e100ff;
 border-radius: 7px;
