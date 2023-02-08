@@ -3,8 +3,14 @@ body {
   background-color: #0f001b;
   color: #fff;
 }
+span{
+  cursor: pointer;
+}
 
-/* Cassie Animations */
+
+
+
+/* Animations */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);
@@ -298,7 +304,8 @@ select:focus {
   margin: 10px auto;
   font-size: 20px;
   cursor: pointer;
-  border-radius: 0.5px;
+
+    border-radius: 0.5px;
   opacity: 0.8;
   transition: 0.3s;
   display: block;
@@ -346,7 +353,7 @@ select:focus~.select-icon svg.icon {
 }
 
 
-/* cassie left hand side PLAYLISTS */
+/* rajvir's code - 2 column weather and playlist flex layout */
 
 .wrapper {
   margin: 15px;
@@ -366,9 +373,6 @@ select:focus~.select-icon svg.icon {
   flex: 1;
 }
 
-
-/* displayed playlists*/
-
 .displayed-playlists {
   display: flex;
   flex-direction: row;
@@ -383,6 +387,7 @@ select:focus~.select-icon svg.icon {
   list-style: none;
 }
 
+/* cassie's code */
 .displayed-playlists img {
   height: auto;
   max-width: 50%;
@@ -458,7 +463,7 @@ select:focus~.select-icon svg.icon {
   
 }
 
-/* WEATHER */
+/* WEATHER cassie */
 .weather-forecast {
   height: 100%;
   text-align: center;
@@ -481,25 +486,17 @@ p {
   font-family: 'Noto Sans Symbols 2', sans-serif;
   font-size: 30px;
 }
-/* weather mp4 */
-.hide {
-  display: none;
-  height: auto;
-  max-width: 50%;
-  /* display: block; */
-  position: relative;
-  margin: auto;
-}
+/* weather mp4 cassie */
 
 p #temperature {
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
-video .hid {
+video .hide {
   position: relative;
   margin: auto;
   max-width: 100%;
-  display: block;
+  /* display: none; dynamically remove this class to show the video */
   height: auto;
   justify-content: center;
   align-items: center;
@@ -507,6 +504,66 @@ video .hid {
   padding-top: 50px;
 }
 
+/* PREVIEW MODAL */
+
+.wrapper .modal1 { 
+  position:fixed;
+
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.541);
+  border-radius: 20px;
+ border: 1.5px solid #e100ff;
+border-radius: 7px;
+box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  /* Let's add the overflow-y property and set it to auto */
+  overflow-y: auto;
+
+}
+
+.modal-content {
+flex: 1;
+  text-align: justify;
+position: relative;
+  width: auto;
+/*     height: calc(100% - 140px); */
+  overflow-y: auto;
+  margin: 10px 30px 30px 30px;
+  padding: 0px 20px 0px 0px;
+
+}
+
+.modal-content h3 {
+margin: 0;
+      text-align: center;
+max-width: 500px;
+width: 50%;
+font-size: 18px;
+ font-family: 'Noto Sans Symbols 2', sans-serif;
+color: #fff;
+}
+
+.modal-content img {
+width: 50%;
+max-width: 500px;
+    text-align: left;
+      font-size: 20px;
+      opacity: .8;
+      cursor: pointer;
+border-radius: 15px;
+}
+.displayed-playlists img:hover {
+background-color: #e100ff;
+color: #050801;
+box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
 .footer {
   width: 100vw;
   height: 50px;
@@ -525,7 +582,7 @@ video .hid {
   padding-top: 10px;
  
 }
-/* media queries */
+/* media queries cassie */
 @media only screen and (max-width: 600px) {
   #change-city {
     font-size: 14px;
@@ -667,23 +724,4 @@ video .hid {
     height: 80%;
   }
 
-}
-/* Rajvir's code */ 
-.wrapper{
-  margin:15px;
-}
-.row{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-}
-.displayed-playlists{
-display: flex;
 }
