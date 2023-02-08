@@ -56,7 +56,6 @@ searchBtn.addEventListener("click", async function () {
   renderSearch()
   getPlaylists();
 });
-localStorage.clear();
 
 //saving searched cities
 function renderSearch(){
