@@ -470,7 +470,6 @@ select:focus~.select-icon svg.icon {
 .close {
   position:fixed;
   font-size: 60px;
-  float: right;
 }
 
 /* WEATHER cassie */
