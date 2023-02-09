@@ -2,23 +2,23 @@
 var apikey = "2699b95b9f3bb5523129bfe9fb508790";
 var searchBtn = document.querySelector("#submit-selection");
 var playlist = document.querySelector(".displayed-playlists");
-playlist.style.display = "none";
+playlist.style.display = "none"; //hides playlist card on load
 var input = document.querySelector("#city-input");
 var currentTemp = document.querySelector("#temperature");
 var currentCity = document.querySelector("#city-name");
 var weather = document.querySelector("#weather-description");
 var currentWeather; //Initialized in displayWeather for use in getPlaylists()
 var weatherModal = document.querySelector("#myModal");
-weatherModal.style.display = "block";
+weatherModal.style.display = "block"; //shows weather modal on load
 var changeCityBtn = document.querySelector("#change-city");
 var closeInputBtn = document.querySelector("#close-input");
-closeInputBtn.style.display = "none";
+closeInputBtn.style.display = "none"; //hides close button from showing up on deafult
 var previewModal = document.querySelector("#preview-modal");
-previewModal.style.display = "none" //modal does not show up on load
+previewModal.style.display = "none" // hides preview modal from showing up on load
 var previewCloseBtn = document.querySelector("#preview-button");
-previewCloseBtn.style.display = "none";
+previewCloseBtn.style.display = "none"; //hides preview close button on load
 var weatherForecast = document.querySelector(".weather-forecast")
-weatherForecast.style.display = "none"
+weatherForecast.style.display = "none" // hides weather card from showing up on load
 //fardina's code
 
 function displayWeather(city) {
@@ -31,6 +31,7 @@ function displayWeather(city) {
     apikey + 
     "&units=imperial"
     )
+    //shows invalid city message when input city does not exist
     .then(function (response) {
       if (response.status !== 200) {
         document.querySelector('#input-error').textContent = 'Please enter a valid city!';
@@ -304,4 +305,3 @@ function showPlaylistItems(playlistData, playlistid) {
     previewModal.appendChild(previewContentEl);
   }
 }
-//rajvir's code
