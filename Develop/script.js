@@ -111,7 +111,7 @@ function renderSearch() {
 }
 
 //YouTube API keys
-//var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
+// var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
 var key = "AIzaSyCTPCZ0BW1oVO9rOTLhWPKmaxI45OKeyvA" //Hamzah's Key
 //var key = "AIzaSyBSZpk2XNTzLPpNRXXODZZ7BxzVoCgkBrs" //Spare Key
 
