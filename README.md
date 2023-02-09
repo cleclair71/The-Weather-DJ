@@ -1,24 +1,6 @@
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 
 
 <!-- PROJECT LOGO -->
@@ -64,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![screenshotdj](https://user-images.githubusercontent.com/76407605/217943247-0493597a-e3b1-4bb4-8003-50d1b4165560.JPG)
 
 The Weather DJ is an innovative web application that combines the power of two API's, YouTube and OpenWeather, to create a unique and personalized musical experience. Our mission is to bring you a fun and engaging way to listen to music based on your location and mood.
 
@@ -86,7 +68,8 @@ If you're not satisfied with your selection, simply click the "Change City" butt
 * [Canva](https://www.canva.com/)
 * [Youtube](https://www.youtube.com/)
 * [Openweather API](https://openweathermap.org/api)
-
+* [JQuery](https://jquery.com/)
+* [JQuery AI](https://jqueryui.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,9 +87,7 @@ Deployed Website: [https://github.com/cleclair71/The-Weather-DJ](https://github.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+![screenshotdj](https://user-images.githubusercontent.com/76407605/217943247-0493597a-e3b1-4bb4-8003-50d1b4165560.JPG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

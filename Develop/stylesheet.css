@@ -485,7 +485,7 @@ select:focus~.select-icon svg.icon {
 }
 
 /*close button */
-.close {
+#preview-button {
   position:fixed;
   font-size: 60px
 }

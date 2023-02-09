@@ -111,8 +111,8 @@ function renderSearch() {
 }
 
 //YouTube API keys
-var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
-//var key = "AIzaSyCTPCZ0BW1oVO9rOTLhWPKmaxI45OKeyvA" //Hamzah's Key
+// var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
+var key = "AIzaSyCTPCZ0BW1oVO9rOTLhWPKmaxI45OKeyvA" //Hamzah's Key
 //  113370d4e76dcc14d215f9450f9519eff0bc8569
 //var key = "AIzaSyBSZpk2XNTzLPpNRXXODZZ7BxzVoCgkBrs" //Spare Key
 
