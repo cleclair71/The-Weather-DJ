@@ -58,6 +58,7 @@ function displayWeather(city) {
       weatherModal.style.display = "none";
       //card to display playlist when city is selected
       playlist.style.display = "block";
+      renderSearch();
       getPlaylists();
     })
 }
@@ -68,7 +69,7 @@ function displayWeather(city) {
   });
     
   let savedCities = JSON.parse(localStorage.getItem("city")) || []
-  renderSearch() 
+  renderSearch();
 
   //event listener
   input.addEventListener("keyup", function (event){
