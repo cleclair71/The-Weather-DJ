@@ -103,9 +103,9 @@ function displayWeather(city) {
 
 
 //jackson's code 
-//var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
+var key = "AIzaSyBDMCgP5fKCMZ7RcyVVZL0XPJuQuuNZqLQ" //Jackson's key
 //var key = "AIzaSyCTPCZ0BW1oVO9rOTLhWPKmaxI45OKeyvA" //Hamzah's Key
-var key = "AIzaSyBSZpk2XNTzLPpNRXXODZZ7BxzVoCgkBrs" //Spare Key
+//var key = "AIzaSyBSZpk2XNTzLPpNRXXODZZ7BxzVoCgkBrs" //Spare Key
 
 function getPlaylists() {
   //Clear any cached playlist previews
@@ -211,11 +211,25 @@ function showPlaylists(playlistData) {
     }
   }
   for (var i=0; i<5; i++) {
-    var playlistEl = document.createElement("div");
+    var playlistTitle = playlistData[i].snippet.title;
+    //Limit playlist titles to 120 characters for long titles
+    if (playlistTitle.length > 120) {
+      playlistTitle = playlistTitle.substring(0, 120);
+      tempTitle = playlistTitle.split(" ");
+      console.log(tempTitle.length);
+      playlistTitle = "";
+      for (var j=0; j<tempTitle.length - 1; j++) {
+        playlistTitle += tempTitle[j] + " ";
+      }
+      playlistTitle += "...";
+    }
     //Create a div to contain each playlist
+    var playlistEl = document.createElement("div");
+    console.log(playlistData[i]);
+    console.log(playlistData[i].id.playlistId);
     playlistEl.innerHTML = 
       '<div class="playlist-card">' +
-        '<h3>' + playlistData[i].snippet.title + '</h3>' +
+        '<h3>' + playlistTitle + '</h3>' +
         '<button class="preview-button" data-playlistid = ' + playlistData[i].id.playlistId + '>Preview Playlist</button>' +
       '</div>' +
       '<a href=' + 'https://www.youtube.com/playlist?list=' + playlistData[i].id.playlistId + '>' +
@@ -260,6 +274,18 @@ function showPlaylistItems(playlistData, playlistid) {
   for (var i=0; i<Object.keys(playlistData.items).length; i++) {
     if (playlistData.items[i].snippet.title == "Deleted video") {
       continue;
+    }
+    var playlistTitle = playlistData.items[i].snippet.title;
+    //Limit playlist titles to 120 characters for long titles
+    if (playlistTitle.length > 120) {
+      playlistTitle = playlistTitle.substring(0, 120);
+      tempTitle = playlistTitle.split(" ");
+      console.log(tempTitle.length);
+      playlistTitle = "";
+      for (var j=0; j<tempTitle.length - 1; j++) {
+        playlistTitle += tempTitle[j] + " ";
+      }
+      playlistTitle += "...";
     }
     var previewContentEl = document.createElement("div");
     previewContentEl.setAttribute("class", "modal-content");
