@@ -170,12 +170,24 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Repository: [https://github.com/cleclair71/The-Weather-DJ](https://github.com/cleclair71/The-Weather-DJ)
-Cassie LeClair: [https://github.com/cleclair71](https://github.com/cleclair71)
-Jackson Rainbird-Kendrick: [https://github.com/JacksonR-K](https://github.com/JacksonR-K)
-Fardina Tabassum: [https://github.com/fardinatabassum](https://github.com/fardinatabassum)
-Rajvir Dhanoa: [https://github.com/rajkdh](https://github.com/rajkdh)
-Hamzah Al-Emad: [https://github.com/hamzahthefantastic](https://github.com/hamzahthefantastic)
+Repository
+> [https://github.com/cleclair71/The-Weather-DJ](https://github.com/cleclair71/The-Weather-DJ)
+---
+Cassie LeClair
+> [https://github.com/cleclair71](https://github.com/cleclair71)
+---
+Jackson Rainbird-Kendrick
+> [https://github.com/JacksonR-K](https://github.com/JacksonR-K)
+---
+Fardina Tabassum
+> [https://github.com/fardinatabassum](https://github.com/fardinatabassum)
+---
+Rajvir Dhanoa
+> [https://github.com/rajkdh](https://github.com/rajkdh)
+---
+Hamzah Al-Emad
+> [https://github.com/hamzahthefantastic](https://github.com/hamzahthefantastic)
+---
 Aleksandr Bausher
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
