@@ -519,7 +519,7 @@ p #temperature {
   padding-bottom: 50px;
 }
 
-video .hide {
+.hide video{
   position: relative;
   margin: auto;
   max-width: 100%;
