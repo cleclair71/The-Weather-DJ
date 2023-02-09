@@ -79,12 +79,16 @@ H1 {
   text-transform: uppercase;
   font-family: 'Noto Sans Symbols 2', sans-serif;
   line-height: 0.8;
-  font-size: 100px;
-  display: flex;
-  margin-top: 115px;
+  /* font-size: 100px; */
+  display: block;
+  font-size: 6rem;
+  margin-top: 20vh;
   animation: slide-in 1000ms;
+  transform: translateY(-40%);
 }
-
+header {
+  height: 60px;
+}
 #background-video {
   width: 100vw;
   height: 40%;
@@ -399,6 +403,7 @@ select:focus~.select-icon svg.icon {
   list-style: none;
   background-color: rgba(0, 0, 0, 0.445);
   border-radius: 7px;
+  margin-top: 12px;
 }
 
 /* cassie's code */
@@ -487,8 +492,6 @@ select:focus~.select-icon svg.icon {
   text-align: center;
   font-family: 'Noto Sans Symbols 2', sans-serif;
   background-color: rgba(0, 0, 0, 0.445);
-  border-radius: 0.5px;
-
   border-radius: 7px;
 
 }
@@ -756,9 +759,6 @@ video .hide {
     height: 90%;
   }
 
-  /* .rt-column video {
-    display: none;
-  } */
 
 }
 
