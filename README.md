@@ -87,7 +87,7 @@ Deployed Website: [https://github.com/cleclair71/The-Weather-DJ](https://github.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![screenshotdj](https://user-images.githubusercontent.com/76407605/217943247-0493597a-e3b1-4bb4-8003-50d1b4165560.JPG)
+[The Weather DJ - 9 February 2023 - Watch Video](https://www.loom.com/share/eedbf4ce43ad43a68fcf7f05983c5920)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
