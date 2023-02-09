@@ -1,33 +1,36 @@
 /* Cassie's code */
+/* Set the background color of the body tag to #0f001b and the text color to #fff */
 body {
   background-color: #0f001b;
   color: #fff;
 }
 
+/* 2. Change the cursor of all <span> tags to a pointer */
 span {
   cursor: pointer;
 }
 
-
-
-
 /* Animations */
 @keyframes slide-in {
+  /* Start the slide in at 100% from the left, so it appears off the screen. */
   from {
     transform: translateX(-100%);
   }
 
+  /* Move the slide in to 0, or the full width of the screen. */
   to {
     transform: translateX(0%);
   }
 }
 
 @keyframes slide-up {
+  /* Start the slide up with the element 20px below the viewport. */
   0% {
     opacity: 0;
     transform: translateY(20px);
   }
 
+  /* Move the slide up to 0, or the top of the viewport. */
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -35,6 +38,7 @@ span {
 }
 
 @keyframes popup {
+  /* All the keyframes are the same as the ones we used for the previous animation, only the percentages have been changed */
   0% {
     transform: scale(1);
   }
@@ -65,6 +69,7 @@ span {
 }
 
 @keyframes slideDown {
+  /* The keyframes for this animation are slightly different than the ones we used for the previous animation. */
   from {
     transform: translateY(-100%);
   }
@@ -79,12 +84,17 @@ H1 {
   text-transform: uppercase;
   font-family: 'Noto Sans Symbols 2', sans-serif;
   line-height: 0.8;
-  font-size: 100px;
-  display: flex;
-  margin-top: 115px;
-  animation: slide-in 1000ms;
-}
 
+  display: block;
+  font-size: 6rem;
+  margin-top: 20vh;
+  animation: slide-in 1000ms;
+  transform: translateY(-40%);
+}
+header {
+  height: 60px;
+}
+/* The actual video background */
 #background-video {
   width: 100vw;
   height: 40%;
@@ -159,7 +169,6 @@ H1 {
   margin: 15px;
 }
 
-
 .modal-content1 .row {
   display: flex;
   flex-direction: row;
@@ -186,7 +195,7 @@ H1 {
   padding-bottom: 40px;
 
 }
-
+/* cassie input font */
 h2 {
   text-transform: uppercase;
   font-family: 'Noto Sans Symbols 2', sans-serif;
@@ -209,6 +218,7 @@ h4 {
   margin-top: 110px;
   padding-bottom: 10px;
 }
+/* cassie input location */
 #location-search h2 {
   transform: translateY(-44px);
 }
@@ -255,7 +265,7 @@ h4 {
   color: rgba(0, 0, 0, 0.315);
 
 }
-
+/* cassie input genre */
 #genre-select {
   width: 250px;
   margin: 100px auto;
@@ -290,7 +300,6 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-
   border-radius: 0.5px;
 }
 
@@ -318,7 +327,6 @@ select:focus {
   margin: 10px auto;
   font-size: 20px;
   cursor: pointer;
-
   border-radius: 0.5px;
   opacity: 0.8;
   transition: 0.3s;
@@ -384,7 +392,7 @@ select:focus~.select-icon svg.icon {
   flex-basis: 100%;
   flex: 1;
 }
-
+/* cassie dynamic playlists */
 .displayed-playlists {
   display: flex;
   flex-direction: row;
@@ -399,6 +407,7 @@ select:focus~.select-icon svg.icon {
   list-style: none;
   background-color: rgba(0, 0, 0, 0.445);
   border-radius: 7px;
+  margin-top: 12px;
 }
 
 /* cassie's code */
@@ -428,7 +437,7 @@ select:focus~.select-icon svg.icon {
   position: relative;
   margin: auto;
 }
-
+/* cassie dynamic playlists card */
 .playlist-card {
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -487,8 +496,6 @@ select:focus~.select-icon svg.icon {
   text-align: center;
   font-family: 'Noto Sans Symbols 2', sans-serif;
   background-color: rgba(0, 0, 0, 0.445);
-  border-radius: 0.5px;
-
   border-radius: 7px;
 
 }
@@ -600,7 +607,7 @@ video .hide {
   box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
-
+/* jackson footer */
 .footer {
   width: 100vw;
   height: fit-content;
@@ -772,9 +779,6 @@ video .hide {
     height: 90%;
   }
 
-  /* .rt-column video {
-    display: none;
-  } */
 
 }
 
