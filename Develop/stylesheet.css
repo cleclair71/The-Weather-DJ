@@ -87,7 +87,7 @@ H1 {
 
 #background-video {
   width: 100vw;
-  height: 25%;
+  height: 40%;
   background-size: cover;
   object-fit: cover;
   position: fixed;
@@ -136,7 +136,7 @@ H1 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0);
   animation: popup 1000ms;
 
 }
@@ -368,7 +368,7 @@ select:focus~.select-icon svg.icon {
 /* rajvir's code - 2 column weather and playlist flex layout */
 
 .wrapper {
-  margin: 15px;
+  display: grid;
 }
 
 .wrapper .row {
@@ -397,25 +397,25 @@ select:focus~.select-icon svg.icon {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-color: rgba(0, 0, 0, 0.445);
+  border-radius: 7px;
 }
 
 /* cassie's code */
 .displayed-playlists img {
   height: auto;
-  max-width: 50%;
+  max-width: 100%;
   display: block;
   position: relative;
   margin: auto;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  border: 1.5px solid #e100ff;
 }
 
 .displayed-playlists img:hover {
   background-color: #e100ff;
   color: #050801;
   box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
 .displayed-playlists h3 {
@@ -424,27 +424,21 @@ select:focus~.select-icon svg.icon {
   color: #fff;
   text-align: center;
   display: block;
+  max-width: 85%;
   position: relative;
   margin: auto;
-
-
 }
 
 .playlist-card {
-  background-color: rgba(0, 0, 0, 0.445);
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
-  max-width: 50%;
+  max-width: 100%;
   display: block;
-  position: relative;
   margin: auto;
   margin-top: 40px;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   padding: 10px;
-  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
 }
 
 .playlist-card img:hover {
@@ -471,7 +465,6 @@ select:focus~.select-icon svg.icon {
   display: block;
   text-transform: uppercase;
   font-family: 'Noto Sans Symbols 2', sans-serif;
-  border: 1.5px solid #e100ff;
   font-weight: bolder;
 }
 

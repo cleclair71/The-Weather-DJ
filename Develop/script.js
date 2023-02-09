@@ -249,6 +249,7 @@ function showPlaylists(playlistData) {
 //Display preview modal when Preview Playlist button is clicked
 $(playlist).on("click", ".preview-button", function (event) {
   previewModal.style.display = "block"; //shows modal when preview button is clicked
+  getPlaylistItems(event.target.dataset.playlistid);
 });
 
 //Close preview modal when close button is clicked
