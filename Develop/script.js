@@ -222,7 +222,6 @@ function showPlaylists(playlistData) {
     if (playlistTitle.length > 120) {
       playlistTitle = playlistTitle.substring(0, 120);
       tempTitle = playlistTitle.split(" ");
-      console.log(tempTitle.length);
       playlistTitle = "";
       for (var j=0; j<tempTitle.length - 1; j++) {
         playlistTitle += tempTitle[j] + " ";
@@ -231,8 +230,6 @@ function showPlaylists(playlistData) {
     }
     //Create a div to contain each playlist
     var playlistEl = document.createElement("div");
-    console.log(playlistData[i]);
-    console.log(playlistData[i].id.playlistId);
     playlistEl.innerHTML = 
       '<div class="playlist-card">' +
         '<h3>' + playlistTitle + '</h3>' +
@@ -288,7 +285,6 @@ function showPlaylistItems(playlistData, playlistid) {
     if (playlistTitle.length > 120) {
       playlistTitle = playlistTitle.substring(0, 120);
       tempTitle = playlistTitle.split(" ");
-      console.log(tempTitle.length);
       playlistTitle = "";
       for (var j=0; j<tempTitle.length - 1; j++) {
         playlistTitle += tempTitle[j] + " ";
