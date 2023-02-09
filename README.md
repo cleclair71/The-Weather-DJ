@@ -207,6 +207,7 @@ Aleksandr Bausher
 * [Google Dev Console](https://console.cloud.google.com/)
 * [Youtube Api](https://developers.google.com/youtube/v3/docs)
 * [Bulma](https://bulma.io/documentation/elements/title/)
+* [2 Column Unordered Lists] (https://stackoverflow.com/questions/14745297/how-to-display-an-unordered-list-in-two-columns)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
