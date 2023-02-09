@@ -160,7 +160,7 @@ function getPlaylists() {
       weathermp4Display.setAttribute("src", "Assets/images/snow.mp4");
       break;
     case "Clouds":
-      weathermp4Display.setAttribute("src", "Assets/images/clouds.mp4");
+      weathermp4Display.setAttribute("src", "Assets/images/cloudy.mp4");
       break;
     case "Mist":
       weathermp4Display.setAttribute("src", "Assets/images/mist.mp4");
