@@ -3,8 +3,14 @@ body {
   background-color: #0f001b;
   color: #fff;
 }
+span{
+  cursor: pointer;
+}
 
-/* Cassie Animations */
+
+
+
+/* Animations */
 @keyframes slide-in {
   from {
     transform: translateX(-100%);
@@ -223,6 +229,8 @@ h2 {
 #input-error {
   color: red;
   font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 }
 
 .search-list {
@@ -300,7 +308,8 @@ select:focus {
   margin: 10px auto;
   font-size: 20px;
   cursor: pointer;
-  border-radius: 0.5px;
+
+    border-radius: 0.5px;
   opacity: 0.8;
   transition: 0.3s;
   display: block;
