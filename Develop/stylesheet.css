@@ -1,0 +1,804 @@
+/* Cassie's code */
+/* Set the background color of the body tag to #0f001b and the text color to #fff */
+body {
+  background-color: #0f001b;
+  color: #fff;
+}
+
+/* 2. Change the cursor of all <span> tags to a pointer */
+span {
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes slide-in {
+  /* Start the slide in at 100% from the left, so it appears off the screen. */
+  from {
+    transform: translateX(-100%);
+  }
+
+  /* Move the slide in to 0, or the full width of the screen. */
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-up {
+  /* Start the slide up with the element 20px below the viewport. */
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Move the slide up to 0, or the top of the viewport. */
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup {
+  /* All the keyframes are the same as the ones we used for the previous animation, only the percentages have been changed */
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(1.1);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  /* The keyframes for this animation are slightly different than the ones we used for the previous animation. */
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Cassie Header */
+H1 {
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  line-height: 0.8;
+
+  display: block;
+  font-size: 6rem;
+  margin-top: 20vh;
+  animation: slide-in 1000ms;
+  transform: translateY(-40%);
+}
+header {
+  height: 60px;
+}
+/* The actual video background */
+#background-video {
+  width: 100vw;
+  height: 40%;
+  background-size: cover;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Change City Button */
+#change-city {
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  position: fixed;
+  background-color: #000;
+  display: flex;
+  padding: 10px 25px;
+  right: 10px;
+  top: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  transition: 0.5s;
+  color: #e100ff;
+  border: 1.5px solid #e100ff;
+  border-radius: 7px;
+  font-weight: 600;
+  letter-spacing: 7px;
+
+}
+
+
+#change-city:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* cassie input modal */
+#myModal {
+  color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  animation: popup 1000ms;
+
+}
+
+.modal-content1 {
+  position: absolute;
+  background-color: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  min-height: 576px;
+  width: 70%;
+  padding: 1rem 1.5rem;
+  max-width: 90%;
+  border: 1.5px solid #e100ff;
+  border-radius: 7px;
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  /* display: flex; */
+  margin: 15px;
+}
+
+.modal-content1 .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.modal-content1 .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  display: flex;
+  margin: auto;
+  max-height: 550px;
+
+}
+
+.modal-content1 img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 40px;
+
+}
+/* cassie input font */
+h2 {
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  line-height: 0.8;
+  font-size: 50px;
+  display: block;
+  margin-top: 105px;
+  text-align: center;
+  margin-top: 110px;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  line-height: 0.8;
+  font-size: 20px;
+  display: block;
+  margin-top: 105px;
+  text-align: center;
+  margin-top: 110px;
+  padding-bottom: 10px;
+}
+/* cassie input location */
+#location-search h2 {
+  transform: translateY(-44px);
+}
+
+#city-input {
+  color: #e100ff;
+  margin: 10px auto;
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.4rem 2rem 1.6rem;
+  background-color: rgba(37, 37, 37, 0.582);
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  line-height: 0.8;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#city-input:hover {
+  background-color: rgba(37, 37, 37, 0.582);
+  color: #fff;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 5px #e100ff, 0px 0px 20px #e100ff, 0px 0px 100px #e100ff;
+
+}
+
+/* jackson */
+#input-error {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.search-list {
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: row;
+  list-style: none;
+  list-style-position: inside;
+  margin: auto;
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  color: rgba(0, 0, 0, 0.315);
+
+}
+/* cassie input genre */
+#genre-select {
+  width: 250px;
+  margin: 100px auto;
+  position: relative;
+
+}
+
+#genre-dropdown {
+  position: relative;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 16px;
+  text-indent: 18px;
+}
+
+select {
+  width: 100%;
+  height: 50px;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  line-height: 1.2;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: rgba(37, 37, 37, 0.582);
+  border: none;
+  border-bottom: 2px solid rgba(37, 37, 37, 0.582);
+  color: white;
+  padding: 7px;
+  padding-right: 38px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+  border-radius: 0.5px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:hover,
+select:focus {
+  background-color: #ff94d5;
+  color: #000000;
+  font-weight: bolder;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 5px #e100ff, 0px 0px 20px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+#submit-selection {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  margin: auto;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px auto;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 0.5px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: block;
+  text-transform: uppercase;
+}
+
+.select-icon {
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  display: block;
+  right: 4px;
+  width: 30px;
+  height: 36px;
+  pointer-events: none;
+  border: 2px solid rgba(37, 37, 37, 0.582);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.select-icon svg.icon {
+  transition: fill 0.3s ease;
+  fill: white;
+}
+
+select:hover~.select-icon svg.icon,
+select:focus~.select-icon svg.icon {
+  fill: rgba(37, 37, 37, 0.582);
+}
+
+#submit-selection:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* change city button */
+#change-city:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+
+/* rajvir's code - 2 column weather and playlist flex layout */
+
+.wrapper {
+  display: grid;
+}
+
+.wrapper .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.wrapper .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+/* cassie dynamic playlists */
+.displayed-playlists {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.445);
+  border-radius: 7px;
+  margin-top: 12px;
+}
+
+/* cassie's code */
+.displayed-playlists img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  margin: auto;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.displayed-playlists img:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+}
+
+.displayed-playlists h3 {
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+  display: block;
+  max-width: 85%;
+  position: relative;
+  margin: auto;
+}
+/* cassie dynamic playlists card */
+.playlist-card {
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 10px;
+}
+
+.playlist-card img:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  
+}
+/* playlist preview button */
+.preview-button {
+  background-color: rgba(0, 0, 0, 0.541);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px auto;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 7px;
+  opacity: 0.8;
+  letter-spacing: 4px;
+  transition: 0.5s;
+  color: #e100ff;
+  display: block;
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-weight: bolder;
+}
+
+.preview-button:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+
+}
+
+/*close button rajvir*/
+#preview-button {
+  position:fixed;
+  font-size: 60px
+}
+
+/* WEATHER cassie */
+.weather-forecast {
+  height: 100%;
+  text-align: center;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  background-color: rgba(0, 0, 0, 0.445);
+  border-radius: 7px;
+
+}
+
+#city-name {
+  text-transform: uppercase;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 50px;
+  color: #fff;
+}
+
+p {
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  font-size: 30px;
+}
+
+/* weather mp4 cassie */
+
+p #temperature {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+.hide video{
+  position: relative;
+  margin: auto;
+  max-width: 100%;
+  /* display: none; dynamically remove this class to show the video */
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 50px;
+}
+
+/* cassie PREVIEW MODAL */
+
+.modal1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  border: 1.5px solid #e100ff;
+  border-radius: 7px;
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  /* Let's add the overflow-y property and set it to auto */
+  overflow-y: auto;
+  padding: 10%;
+
+}
+
+.modal-content {
+  flex: 1;
+  text-align: justify;
+  position: relative;
+  width: auto;
+  overflow-y: auto;
+  margin: 10px 30px 30px 30px;
+  padding: 0px 20px 0px 0px;
+
+}
+
+.modal-content h3 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  max-width: 500px;
+  width: 70%;
+  font-size: 18px;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  color: #fff;
+}
+
+.modal-content a {
+  width: 50%;
+  text-align: center;
+  opacity: .8;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: auto;
+  cursor: pointer;
+  max-width: 480px;
+  max-height: 360px
+}
+
+.modal-content div {
+  width: auto;
+  text-align: center;
+}
+
+.modal-content a:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.displayed-playlists img:hover {
+  background-color: #e100ff;
+  color: #050801;
+  box-shadow: 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+/* jackson footer */
+.footer {
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: 'Noto Sans Symbols 2', sans-serif;
+  color: rgba(255, 255, 255, 0.445);
+  background-color: #4d008460;
+  padding: 25px 0; 
+  margin-top: 10px;
+}
+
+#footer-columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-colums: 2;
+  width: fit-content;
+  margin: auto;
+}
+
+.footer ul {
+  font-size: 12px;
+}
+
+.footer img {
+  width: 108px;
+  height: 108px;
+  margin: auto;
+}
+
+/* media queries cassie */
+@media only screen and (max-width: 600px) {
+  #change-city {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-right: 20px;
+  }
+
+  #submit-selection {
+    font-size: 14px;
+    padding: 5px 10px;
+    position: relative;
+    margin: auto;
+    margin-top: 10%;
+  }
+
+  H1 {
+    font-size: 50px;
+    margin-right: auto;
+  }
+
+  #city-input {
+    max-width: 200px;
+    font-size: 15px;
+    margin-right: auto;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 80px;
+  }
+
+  #genre-select {
+    max-width: 200px;
+    font-size: 15px;
+    margin-right: auto;
+  }
+
+  .rt-column video {
+    display: none;
+  }
+
+  .rt-column {
+    display: none;
+  }
+
+  .lft-column {
+    max-width: 400px;
+  }
+
+  .modal-content1 {
+    min-width: 230px;
+  }
+
+  .preview-button {
+    font-size: 13px;
+    max-width: 45%;
+  }
+
+  .displayed-playlists h3 {
+    font-size: 13px;
+  }
+
+  .weather-forecast {
+    border: none;
+  }
+}
+
+.modal-content a {
+  width: 70%;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .playlist-card {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  H1 {
+    font-size: 60px;
+  }
+
+  .weather-forecast, .displayed-playlists {
+    width: 100%;
+    float: none;
+  }
+
+  .weather-forecast {
+    border: none;
+  }
+
+  .modal-content1 {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0px;
+  }
+
+  .rt-column img {
+    display: none;
+  }
+
+  .rt-column {
+    display: none;
+  }
+
+  .lft-column {
+    max-width: 600px;
+  }
+
+  .preview-button {
+    font-size: 14px;
+    max-width: 30%;
+  }
+
+  .displayed-playlists h3 {
+    font-size: 16px;
+  }
+}
+
+.modal-content a {
+  width: 70%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  H1 {
+    font-size: 70px;
+  }
+
+  .modal-content1 {
+    width: 90%;
+    height: 90%;
+  }
+
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  H1 {
+    font-size: 80px;
+  }
+
+  .modal-content1 {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  figure {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    max-height: 500px !important;
+  }
+}
