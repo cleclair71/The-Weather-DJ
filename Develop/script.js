@@ -238,7 +238,7 @@ function showPlaylists(playlistData) {
         '<h3>' + playlistTitle + '</h3>' +
         '<button class="preview-button" data-playlistid = ' + playlistData[i].id.playlistId + '>Preview Playlist</button>' +
       '</div>' +
-      '<a href=' + 'https://www.youtube.com/playlist?list=' + playlistData[i].id.playlistId + '>' +
+      '<a href=' + 'https://www.youtube.com/playlist?list=' + playlistData[i].id.playlistId + ' target="_blank">' +
         '<img src=' + playlistData[i].snippet.thumbnails.high.url + '>' +
       '</a>';
     
@@ -300,7 +300,7 @@ function showPlaylistItems(playlistData, playlistid) {
     previewContentEl.innerHTML = 
       '<div>' +
         '<h3>' + playlistData.items[i].snippet.title + '</h3>' +
-      '<a href=' + 'https://www.youtube.com/watch?v=' + playlistData.items[i].snippet.resourceId.videoId + "&list=" + playlistid + '>' +
+      '<a href=' + 'https://www.youtube.com/watch?v=' + playlistData.items[i].snippet.resourceId.videoId + "&list=" + playlistid + ' target="_blank">' +
         '<img src=' + playlistData.items[i].snippet.thumbnails.high.url + '>' +
       '</a>';
 
