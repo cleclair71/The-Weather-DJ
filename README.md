@@ -179,12 +179,12 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 ## Contributing
 
 Tasks and Roles 
-Cassie - CSS design and ReadME template
-Jackson - JavaScript
-Fardina - 
-Hamzah - 
-Rajvir - 
-Aleks - 
+Cassie - Overall CSS design, animations, modal design, responsive design, designed MP4s in Canva, updated HTML framework to incorporate CSS frameworks, classes, and media, added bulma, incorporated Readme template and made updates
+Jackson - JavaScript - api calls, playlist fetch, debugging,  JavaScript alert, dynamically created divs, reviewing large conflicts, capping title characters, JavaScript weather MP4s 
+Fardina - weather calls, edited functionality of modals, local storage, autocomplete
+Hamzah - HTML framework, slideshow presentation, 
+Rajvir - event listener for enter, tested styling and fixed errors in CSS, playlist weather flexbox, gitignore edits, layout, playlist containers html
+Aleks - span hover, helped with html
 
 
 
@@ -260,9 +260,4 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> 4f4bbd1b850c192a1210db5fa8738780f99eef82
->>>>>>> hamzah

@@ -30,59 +30,55 @@
 
   <!-- Modal -->
 
-  <div id="myModal" class="modal">
+  <div id="myModal" class="modal ui-front">
 
     <div id="ModalFullscreen">
       <!-- Modal content -->
       <div class="modal-content1">
-
-        <div class="page-wrapper">
-          <div class="row">
-            <div class="column">
-              <div class="lft-column">
-                <span class="close" id="close-input">&times;</span>
-                <div id="location-search">
-                  <h2>What city are you in?</h2>
-                  <p id="input-error"></p>
-                  <input type="text" id="city-input" placeholder="Enter your city">
-                  <div class="search-list">
-                    <ul class="city-list">
-                  </div>
-
-                  <!-- Genre Selection -->
-                  <div id="genre-select">
-                    <h2>select a genre</h2>
-                    <select id="genre-dropdown">
-                      <option value="pop">Pop</option>
-                      <option value="rock">Rock</option>
-                      <option value="hip-hop">Hip-Hop</option>
-                      <option value="electronic">Electronic</option>
-                      <option value="country">Country</option>
-                      <option value="jazz">Jazz</option>
-                      <option value="classical">Classical</option>
-                      <option value="r&b">R&B</option>
-                      <option value="blues">Blues</option>
-                      <option value="soul">Soul</option>
-                    </select>
-                    <div class="select-icon">
-                      <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
-                        <path
-                          d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
-                        </path>
-                      </svg>
-                    </div>
-                  </div>
-                  <button id="submit-selection">Submit</button>
+        <div class="row">
+          <div class="column">
+            <div class="lft-column">
+              <span class="close" id="close-input">&times;</span>
+              <div id="location-search">
+                <h2>What city are you in?</h2>
+                <p id="input-error"></p>
+                <input type="text" id="city-input" placeholder="Enter your city">
+                <div class="search-list">
+                  <ul class="city-list">
                 </div>
+
+                <!-- Genre Selection -->
+                <div id="genre-select">
+                  <h2>select a genre</h2>
+                  <select id="genre-dropdown">
+                    <option value="pop">Pop</option>
+                    <option value="rock">Rock</option>
+                    <option value="hip-hop">Hip-Hop</option>
+                    <option value="electronic">Electronic</option>
+                    <option value="country">Country</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="classical">Classical</option>
+                    <option value="r&b">R&B</option>
+                    <option value="blues">Blues</option>
+                    <option value="soul">Soul</option>
+                  </select>
+                  <div class="select-icon">
+                    <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                      <path
+                        d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <button id="submit-selection">Submit</button>
               </div>
             </div>
-            <div class="column">
-              <div class="rt-column">
-                <figure class="image is-1by1"> <!--  bulma -->
-                  <img src="Assets\images\The weather dj.gif">
-                </figure>
-                
-              </div>
+          </div>
+          <div class="column">
+            <div class="rt-column">
+              <figure class="image is-1by1"> <!--  bulma -->
+                <img src="Assets\images\The weather dj.gif">
+              </figure>
             </div>
           </div>
         </div>
@@ -102,7 +98,7 @@
           <br>
           <br>
           <div id="weathermp4" class="hide">
-          
+
             <video width="932" autoplay loop muted>
               <source src="" type="video/mp4"> <!--Source grabbed in JavaScript-->
 
