@@ -519,7 +519,7 @@ p #temperature {
   padding-bottom: 50px;
 }
 
-video .hide {
+.hide video{
   position: relative;
   margin: auto;
   max-width: 100%;
@@ -610,19 +610,35 @@ video .hide {
 /* jackson footer */
 .footer {
   width: 100vw;
-  height: 50px;
-  position: fixed;
+  height: fit-content;
+  position: relative;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1; 
   text-align: center;
   font-family: 'Noto Sans Symbols 2', sans-serif;
-  font-size: 12px;
   color: rgba(255, 255, 255, 0.445);
   background-color: #4d008460;
-  padding-top: 10px; 
+  padding: 25px 0; 
+  margin-top: 10px;
+}
 
+#footer-columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-colums: 2;
+  width: fit-content;
+  margin: auto;
+}
+
+.footer ul {
+  font-size: 12px;
+}
+
+.footer img {
+  width: 108px;
+  height: 108px;
+  margin: auto;
 }
 
 /* media queries cassie */
