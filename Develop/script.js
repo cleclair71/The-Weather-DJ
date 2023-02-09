@@ -14,8 +14,11 @@ var changeCityBtn = document.querySelector("#change-city");
 var closeInputBtn = document.querySelector("#close-input");
 closeInputBtn.style.display = "none";
 var previewModal = document.querySelector("#preview-modal");
+previewModal.style.display = "none" //modal does not show up on load
 var previewCloseBtn = document.querySelector("#preview-button");
 previewCloseBtn.style.display = "none";
+var weatherForecast = document.querySelector(".weather-forecast")
+weatherForecast.style.display = "none"
 //fardina's code
 
 function displayWeather(city) {
@@ -78,7 +81,10 @@ function displayWeather(city) {
   searchBtn.addEventListener("click", function () {
     var searchValue = input.value
     displayWeather(searchValue);
+    weatherForecast.style.display = "block"
   });
+
+
 
   //saving searched cities
   function renderSearch(){
@@ -228,10 +234,12 @@ function showPlaylists(playlistData) {
 }
 
 $(playlist).on("click", ".preview-button", function (event) {
+  previewModal.style.display = "block" //shows modal when previe button is clicked
   getPlaylistItems(event.target.dataset.playlistid);
 });
 
 $("#preview-modal").on("click", ".close", function() {
+  previewModal.style.display = "none" //gets rid of  modal when close button is clicked
   previewCloseBtn.style.display = "none";
   $(".modal-content").remove();
  })
