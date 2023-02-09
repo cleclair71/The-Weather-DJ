@@ -78,7 +78,9 @@ If you're not satisfied with your selection, simply click the "Change City" butt
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Deployed Website: [https://github.com/cleclair71/The-Weather-DJ](https://github.com/cleclair71/The-Weather-DJ)
+
+[Deployed Website](https://cleclair71.github.io/The-Weather-DJ/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
